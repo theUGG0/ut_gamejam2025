@@ -1,5 +1,7 @@
 extends Node
 
+var preloaded_scenes: Dictionary = {}
+
 var game_scores: Dictionary = {}
 var toys: Array = ["whack_a_mole"]
 var player_spawn_pos: Vector2 = Vector2(0, 2)
@@ -18,6 +20,9 @@ signal _display_game_start_dialogue(game_name: String, game_scene_path: String)
 signal _hide_game_start_dialogue()
 signal _hide_game_finish_dialogue()
 signal _display_game_finish_dialogue(score: int, toy_id: String)
+
+func _ready() -> void:
+	preloaded_scenes["main"] = preload("res://scenes/main.tscn")
 
 # changes the score of a game in the game_scores directory to new_score
 func insert_game_score(game_name: String, new_score: int):
@@ -51,7 +56,8 @@ func finish_game(game_name: String, score: int, toy_id=null):
 	print("Scene change start at: ", Time.get_ticks_msec())
 	emit_signal("_hide_game_start_dialogue")
 	var tree = get_tree()
-	tree.change_scene_to_file("res://scenes/main.tscn")
+	
+	tree.change_scene_to_packed(preloaded_scenes["main"])
 	
 	# await tree.process_frame
 	print("Scene changed at: ", Time.get_ticks_msec())

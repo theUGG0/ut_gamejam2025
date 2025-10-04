@@ -69,7 +69,7 @@ func _process(delta):
 			print("Space pressed but race_started=", race_started, " race_finished=", race_finished)
 		return
 	
-	print("Race is running, checking for input...")  # This should print every frame
+	print("Race is running:", Time.get_ticks_msec())  # This should print every frame
 	
 	# Player horse movement
 	if Input.is_action_just_pressed("race_move"):
@@ -120,9 +120,10 @@ func _race_finished(winner_name: String):
 	if bg_music:
 		bg_music.stop()
 	
-	# Wait 3 seconds then return to main scene
-
-	await get_tree().create_timer(0.1).timeout
+	
+	print("Start await:", Time.get_ticks_msec())
+	await get_tree().create_timer(3).timeout
+	print("Call GM finish game", Time.get_ticks_msec())
 	GameManager.finish_game("horsy race", 10, "whack_a_mole")
 	# await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://main.tscn")  # Change to your main scene path
