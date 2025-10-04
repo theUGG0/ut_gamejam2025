@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmjxce8yrxekb" path="res://asstes/algne_map_smaller.png" id="2_681xg"]
 [ext_resource type="PackedScene" uid="uid://k0xk1bxb8cwk" path="res://scenes/PLAYER.tscn" id="2_vp82u"]
 [ext_resource type="Script" uid="uid://dvnjo70h8k508" path="res://scripts/exitgate.gd" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://b00upu3gx4bw2" path="res://scenes/MainGUI.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://c2650i4fs8k67" path="res://scenes/MainGUI.tscn" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://bpj1xm5nwpnvj" path="res://asstes/main_page/varav.png" id="7_o6xl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
@@ -42162,10 +42162,10 @@ size = Vector2(213, 2463.6875)
 size = Vector2(1916, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
-size = Vector2(859.5, 172)
+size = Vector2(915.75, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
-size = Vector2(851, 155)
+size = Vector2(912.5, 155)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tipki"]
 radius = 272.0
@@ -42225,28 +42225,32 @@ position = Vector2(35, -2215)
 shape = SubResource("RectangleShape2D_tbgi4")
 
 [node name="down-right" type="CollisionShape2D" parent="Sideborders"]
-position = Vector2(672, 342)
+position = Vector2(643.875, 342)
 shape = SubResource("RectangleShape2D_tefeu")
 
 [node name="down-right2" type="CollisionShape2D" parent="Sideborders"]
-position = Vector2(-539, 338)
+position = Vector2(-508.25, 338)
 shape = SubResource("RectangleShape2D_o6xl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sideborders"]
 position = Vector2(34, -855)
 shape = SubResource("CapsuleShape2D_tipki")
 
-[node name="Meri" type="CollisionShape2D" parent="Sideborders"]
-position = Vector2(74, 521)
-shape = SubResource("RectangleShape2D_tipki")
-
 [node name="exitGate" type="Area2D" parent="."]
-position = Vector2(-21, -30)
+position = Vector2(90, 388)
 script = ExtResource("4_jyhfs")
+
+[node name="Meri" type="CollisionShape2D" parent="exitGate"]
+position = Vector2(-4, 145)
+shape = SubResource("RectangleShape2D_tipki")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainGui" parent="CanvasLayer" instance=ExtResource("4_tefeu")]
+offset_left = 26.0
+offset_top = 42.0
+offset_right = 26.0
+offset_bottom = 42.0
 
 [node name="HorseGameInter" type="Area2D" parent="."]
 position = Vector2(-668, -922)
@@ -42274,13 +42278,6 @@ minigame_scene_path = "res://scenes/horsymang/horse_race.tscn"
 
 [node name="interactionphase" type="CollisionShape2D" parent="WhackAMoleInter"]
 shape = SubResource("CircleShape2D_sugp2")
-
-[node name="HorseGameInter_DialogBox#NoButton" type="Button" parent="."]
-offset_left = 111.0
-offset_top = 62.0
-offset_right = 224.0
-offset_bottom = 93.0
-text = "No thank you"
 
 [node name="Gate-Image" type="Sprite2D" parent="."]
 visibility_layer = 1023
