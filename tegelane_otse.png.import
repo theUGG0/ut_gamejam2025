@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmg1820bn2d62"
-path="res://.godot/imported/TX Shadow Plant.png-91ce60e34bc8222aeb5ad2a7e5f22be4.ctex"
+uid="uid://dyosd2f4q87pk"
+path="res://.godot/imported/tegelane_otse.png-931988e3c3dae254e7337aab392cf319.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/TX Shadow Plant.png"
-dest_files=["res://.godot/imported/TX Shadow Plant.png-91ce60e34bc8222aeb5ad2a7e5f22be4.ctex"]
+source_file="res://tegelane_otse.png"
+dest_files=["res://.godot/imported/tegelane_otse.png-931988e3c3dae254e7337aab392cf319.ctex"]
 
 [params]
 
