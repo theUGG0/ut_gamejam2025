@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-[gd_scene format=3 uid="uid://b00upu3gx4bw2"]
-=======
 [gd_scene load_steps=2 format=3 uid="uid://cj1h14mx6hhb3"]
 
 [ext_resource type="Script" uid="uid://dwln8y8q2hpxk" path="res://scenes/main_gui.gd" id="1_ac01h"]
->>>>>>> Stashed changes
 
 [node name="MainGui" type="Control"]
 layout_mode = 3
@@ -13,8 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-<<<<<<< Updated upstream
-=======
 script = ExtResource("1_ac01h")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -39,4 +33,3 @@ layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
->>>>>>> Stashed changes
