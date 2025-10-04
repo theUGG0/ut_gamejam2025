@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn8kww6uing6u"
-path="res://.godot/imported/TX Props.png-7d2bfe0f7dc837375e658ec7e8f9a33b.ctex"
+path="res://.godot/imported/TX Props.png-42be7a24b93a2962d971ff33a905a5fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ut_gamejam2025/asstes/TX Props.png"
-dest_files=["res://.godot/imported/TX Props.png-7d2bfe0f7dc837375e658ec7e8f9a33b.ctex"]
+source_file="res://asstes/TX Props.png"
+dest_files=["res://.godot/imported/TX Props.png-42be7a24b93a2962d971ff33a905a5fb.ctex"]
 
 [params]
 

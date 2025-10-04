@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kq7h4ib6o28h"
-path="res://.godot/imported/TX Shadow.png-5f2e96e5fcefdb2bf35942e1ff0a9a63.ctex"
+path="res://.godot/imported/TX Shadow.png-4f110f84b98825b4c6776454297e9c7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ut_gamejam2025/asstes/TX Shadow.png"
-dest_files=["res://.godot/imported/TX Shadow.png-5f2e96e5fcefdb2bf35942e1ff0a9a63.ctex"]
+source_file="res://asstes/TX Shadow.png"
+dest_files=["res://.godot/imported/TX Shadow.png-4f110f84b98825b4c6776454297e9c7e.ctex"]
 
 [params]
 

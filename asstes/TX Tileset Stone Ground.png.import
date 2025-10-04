@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkmkwt77yewa7"
-path="res://.godot/imported/TX Tileset Stone Ground.png-79b1c9f663262ff787390e0367c321a9.ctex"
+path="res://.godot/imported/TX Tileset Stone Ground.png-4495d9c17bac951e6b45b6dbe3fd0f62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ut_gamejam2025/asstes/TX Tileset Stone Ground.png"
-dest_files=["res://.godot/imported/TX Tileset Stone Ground.png-79b1c9f663262ff787390e0367c321a9.ctex"]
+source_file="res://asstes/TX Tileset Stone Ground.png"
+dest_files=["res://.godot/imported/TX Tileset Stone Ground.png-4495d9c17bac951e6b45b6dbe3fd0f62.ctex"]
 
 [params]
 

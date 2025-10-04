@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtal2ijpfimlm"
-path="res://.godot/imported/playerGrey_up1.png-3d6fd47e931c5e09892c347759a16642.ctex"
+path="res://.godot/imported/playerGrey_up1.png-cc23f3c2d5fd271e7a3f3e44dc52aa1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ut_gamejam2025/scenes/dino_mang/playerGrey_up1.png"
-dest_files=["res://.godot/imported/playerGrey_up1.png-3d6fd47e931c5e09892c347759a16642.ctex"]
+source_file="res://scenes/dino_mang/playerGrey_up1.png"
+dest_files=["res://.godot/imported/playerGrey_up1.png-cc23f3c2d5fd271e7a3f3e44dc52aa1d.ctex"]
 
 [params]
 

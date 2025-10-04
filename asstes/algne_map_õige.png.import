@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btbblmv4eutf"
-path="res://.godot/imported/algne_map_õige.png-1b7f9ef1353883dcbfafd7ac7bdce8bc.ctex"
+path="res://.godot/imported/algne_map_õige.png-181a8de2a8f34c0bee14bc6578d469c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ut_gamejam2025/asstes/algne_map_õige.png"
-dest_files=["res://.godot/imported/algne_map_õige.png-1b7f9ef1353883dcbfafd7ac7bdce8bc.ctex"]
+source_file="res://asstes/algne_map_õige.png"
+dest_files=["res://.godot/imported/algne_map_õige.png-181a8de2a8f34c0bee14bc6578d469c5.ctex"]
 
 [params]
 
