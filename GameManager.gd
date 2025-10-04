@@ -15,7 +15,7 @@ func upsert_game_score(game_name: String, score_change: int):
 	game_scores[game_name] += score_change
 	emit_signal("score_changed", game_name, game_scores[game_name])
 
-# returns the sum of all games in game_scores
+# returns the sum of all game scores in game_scores
 func get_total_score():
 	if game_scores.is_empty():
 		return 0

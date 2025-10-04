@@ -1,4 +1,6 @@
-[gd_scene load_steps=0 format=3 uid="uid://cj1h14mx6hhb3"]
+[gd_scene load_steps=2 format=3 uid="uid://cj1h14mx6hhb3"]
+
+[ext_resource type="Script" uid="uid://dwln8y8q2hpxk" path="res://scenes/main_gui.gd" id="1_ac01h"]
 
 [node name="MainGui" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ac01h")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -23,4 +26,10 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
