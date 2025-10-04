@@ -5,19 +5,17 @@ var hit = false
 var clicked = false
 var used = 0
 var time = 0.2
+signal mole_hit
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if hit:
 		_move_mole()
 		hit = false
 
-func _input(event):	
+func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		clicked = not clicked
 		if not clicked:
@@ -34,8 +32,9 @@ func _move_mole():
 	$Sprite2D2.texture = load("res://pildid/mole_väljas_transparent.png")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if get_tree().current_scene.game_over:
+		return
 	if clicked and used == 0:
 		hit = true
 		used = 1
-
-	#print("Mole whacked!",body.name)
+		emit_signal("mole_hit")
