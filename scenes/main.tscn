@@ -17154,12 +17154,13 @@ offset_bottom = -1028.0
 text = "Press E"
 
 [node name="DialogBox" type="Panel" parent="Aliminigameinteraction"]
-modulate = Color(0.25649998, 0.83441657, 0.95, 0.96862745)
+modulate = Color(0.7056, 0.8062134, 0.98, 0.96862745)
 self_modulate = Color(0.59607846, 0.62352943, 1, 0.7176471)
-offset_left = 318.0
-offset_top = -1034.0
-offset_right = 718.0
-offset_bottom = -934.0
+clip_contents = true
+offset_left = 398.0
+offset_top = -1044.0
+offset_right = 628.0
+offset_bottom = -944.0
 theme = SubResource("Theme_tefeu")
 
 [node name="DialogText" type="Label" parent="Aliminigameinteraction/DialogBox"]
@@ -17171,16 +17172,16 @@ offset_bottom = 28.0
 
 [node name="YesButton" type="Button" parent="Aliminigameinteraction/DialogBox"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 52.0
-offset_right = 124.0
-offset_bottom = 83.0
+offset_left = 8.0
+offset_top = 63.0
+offset_right = 97.0
+offset_bottom = 94.0
 text = "Yes please"
 
 [node name="NoButton" type="Button" parent="Aliminigameinteraction/DialogBox"]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 52.0
-offset_right = 272.0
-offset_bottom = 83.0
+offset_left = 111.0
+offset_top = 62.0
+offset_right = 224.0
+offset_bottom = 93.0
 text = "No thank you"
