@@ -5,30 +5,63 @@
 [sub_resource type="GDScript" id="GDScript_vktbf"]
 script/source = "extends Control
 
-var toy_textures = {
-	\"whack_a_mole\": preload(\"res://asstes/minon.png\")
-}
+var next_game_scene_path = \"\"
 
 func _ready():
 	update_score_counter()
 	display_toys()
+	$BeginGameDialogue/VBoxContainer/ButtonMargins/YesButton.pressed.connect(switch_game)
+	$BeginGameDialogue/VBoxContainer/ButtonMargins/NoButton.pressed.connect(hide_game_start_dialogue)
+	GameManager.connect(\"_display_game_start_dialogue\", display_game_start_dialogue)
+	GameManager.connect(\"_hide_game_start_dialogue\", hide_game_start_dialogue)
+	GameManager.connect(\"_display_game_finish_dialogue\", display_game_finish_dialogue)
+	GameManager.connect(\"_hide_game_finish_dialogue\", hide_game_finish_dialogue)
+	$GameWinDialogue/MarginContainer/VBoxContainer/DismissButton.pressed.connect(hide_game_finish_dialogue)
 	
 func update_score_counter():
 	$MarginContainer/MainGUIHContainer/ScoreContainer/ScoreLabel.text = \"Total score: %d\" % GameManager.get_total_score()
 
 func display_toys():
 	for value in GameManager.toys:
-		if value not in toy_textures:
-			print(\"Toy texture not defined for %d!\" % value)
+		if value not in GameManager.toy_textures:
+			print(\"Toy texture not defined for %s!\" % value)
 			pass
-		
+
 		var texrec = TextureRect.new()
-		texrec.texture = toy_textures[value]
+		texrec.texture = GameManager.toy_textures[value]
 		texrec.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 		texrec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texrec.set_meta(\"toy_id\", value)
 		$MarginContainer/MainGUIHContainer/ToyContainer.add_child(texrec)
-				
+
+func display_game_start_dialogue(game_name, game_scene_path):
+	if $GameWinDialogue.visible:
+		return
+	$BeginGameDialogue/VBoxContainer/GameLabel.text = \"Play game %s?\" % game_name
+	next_game_scene_path = game_scene_path
+	$BeginGameDialogue.show()
+
+func hide_game_start_dialogue():
+	$BeginGameDialogue.hide()
+
+func switch_game():
+	if next_game_scene_path != \"\":
+		get_tree().change_scene_to_file(next_game_scene_path)
+
+func display_game_finish_dialogue(score, toy_id=null):
+	print(\"RAHHHH\", score, toy_id)
+	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ScoreLabel.text = \"Your score: %d\" % score
+	if not toy_id or toy_id not in GameManager.toy_textures:
+		$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyLabel.text = \"You didn't win a single toy! Loser!\"
+		$GameWinDialogue.show()
+		return
+	
+	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyTexRec.texture = GameManager.toy_textures[toy_id]
+	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyLabel.text = GameManager.toy_names[toy_id]
+	$GameWinDialogue.show()	
+
+func hide_game_finish_dialogue():
+	$GameWinDialogue.hide()
 "
 
 [node name="MainGui" type="Control"]
@@ -36,7 +69,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -902.0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 13.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_vktbf")
@@ -70,3 +106,118 @@ theme_override_font_sizes/font_size = 32
 [node name="ToyContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer"]
 custom_minimum_size = Vector2(26.765, 0)
 layout_mode = 2
+
+[node name="BeginGameDialogue" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -73.0
+offset_right = 459.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BeginGameDialogue"]
+layout_mode = 2
+
+[node name="GameLabel" type="Label" parent="BeginGameDialogue/VBoxContainer"]
+custom_minimum_size = Vector2(0, 56.805)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 71
+text = "Play game POOP"
+
+[node name="ButtonMargins" type="MarginContainer" parent="BeginGameDialogue/VBoxContainer"]
+custom_minimum_size = Vector2(0, 86.345)
+layout_mode = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 20
+
+[node name="YesButton" type="Button" parent="BeginGameDialogue/VBoxContainer/ButtonMargins"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="BeginGameDialogue/VBoxContainer/ButtonMargins"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "No"
+
+[node name="GameWinDialogue" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -179.0
+offset_right = 401.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameWinDialogue"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameWinDialogue/MarginContainer"]
+layout_mode = 2
+
+[node name="HeaderLabel" type="Label" parent="GameWinDialogue/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 71
+text = "You finished the game!"
+
+[node name="SubtitleLabel" type="Label" parent="GameWinDialogue/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 51
+text = "You collected"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameWinDialogue/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 32
+
+[node name="ToyTexRec" type="TextureRect" parent="GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ToyLabel" type="Label" parent="GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50.53, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ac01h")
+
+[node name="DismissButton" type="Button" parent="GameWinDialogue/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Dismiss"
