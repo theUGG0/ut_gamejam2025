@@ -1,8 +1,7 @@
 extends Node
 
 var game_scores: Dictionary = {}
-var toys: Arvar total_score = 0
-ray = []
+var toys: Array = []
 
 # changes the score of a game in the game_scores directory to new_score
 func insert_game_score(game_name: String, new_score: int):
