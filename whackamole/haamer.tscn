@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3e86msf8vr65"]
+
+[ext_resource type="Script" uid="uid://do2qd6euppa5y" path="res://haamer.gd" id="1_ccc8y"]
+[ext_resource type="Texture2D" uid="uid://ih70o5r32jk3" path="res://pildid/haamer_transparent.png" id="2_ccc8y"]
+
+[node name="Haamer" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_ccc8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(30, 110)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ccc8y")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(-54, -75)
+polygon = PackedVector2Array(-69, 5, -96, 12, -98, 135, -61, 142, -22, 138, -18, 90, -16, 11, -51, 2)
