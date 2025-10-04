@@ -32,3 +32,6 @@ func read_input():
 func _physics_process(delta: float):
 	read_input()
 	move_and_slide()
+
+func _ready():
+	position = Global.player_spawn_position

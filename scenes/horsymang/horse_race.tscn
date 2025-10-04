@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://bti65wvs7kog0"]
+
+[ext_resource type="Script" uid="uid://ctith11nemb36" path="res://scripts/horse_mini/HorseRace.gd" id="1_qtlb3"]
+
+[sub_resource type="Gradient" id="Gradient_gsrtf"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qtlb3"]
+gradient = SubResource("Gradient_gsrtf")
+
+[sub_resource type="Gradient" id="Gradient_mvh2r"]
+offsets = PackedFloat32Array(0, 0.56790125, 0.85333335, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.56790125, 0.56790125, 0.56790125, 1, 0.7, 0.7, 0.7, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ik4b5"]
+gradient = SubResource("Gradient_mvh2r")
+
+[sub_resource type="CurveTexture" id="CurveTexture_7kfb6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ud885"]
+
+[node name="HorseRace" type="Node2D"]
+script = ExtResource("1_qtlb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="background" type="ColorRect" parent="Sprite2D"]
+offset_right = 1927.0
+offset_bottom = 1085.0
+color = Color(0.51160675, 0.76, 0.4788, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Sprite2D"]
+offset_left = -125.0
+offset_top = 118.0
+offset_right = 2121.0
+offset_bottom = 317.0
+color = Color(0.77216774, 0.52057785, 0.38236484, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Sprite2D"]
+offset_left = -124.0
+offset_top = 350.0
+offset_right = 2122.0
+offset_bottom = 549.0
+color = Color(0.77216774, 0.52057785, 0.38236484, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Sprite2D"]
+offset_left = -123.0
+offset_top = 578.0
+offset_right = 2123.0
+offset_bottom = 777.0
+color = Color(0.77216774, 0.52057785, 0.38236484, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Sprite2D"]
+offset_left = -126.0
+offset_top = 810.0
+offset_right = 2120.0
+offset_bottom = 1009.0
+color = Color(0.77216774, 0.52057785, 0.38236484, 1)
+
+[node name="PlayerHorse" type="Sprite2D" parent="."]
+position = Vector2(88, 218.00002)
+scale = Vector2(3.0859375, 1.234375)
+texture = SubResource("GradientTexture2D_qtlb3")
+
+[node name="AIHorse1" type="Sprite2D" parent="."]
+modulate = Color(1, 0.22000003, 0.22000003, 1)
+position = Vector2(92, 447)
+scale = Vector2(1, 114.5)
+texture = SubResource("GradientTexture1D_ik4b5")
+
+[node name="AIHorse2" type="Sprite2D" parent="."]
+position = Vector2(94, 668.875)
+scale = Vector2(1, 108.25)
+texture = SubResource("CurveTexture_7kfb6")
+
+[node name="AIHorse3" type="Sprite2D" parent="."]
+position = Vector2(99, 893.99994)
+scale = Vector2(254, 104)
+texture = SubResource("PlaceholderTexture2D_ud885")
+
+[node name="FinishLine" type="ColorRect" parent="."]
+offset_left = 1867.0
+offset_top = -24.0
+offset_right = 1961.0
+offset_bottom = 1084.0
+color = Color(0.97356266, 0.971633, 0.9865882, 1)
+
+[node name="InstructionLabel" type="Label" parent="."]
+modulate = Color(0.2582343, 0.2933222, 0.14173043, 1)
+offset_left = 148.0
+offset_top = 8.0
+offset_right = 1765.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 64
+text = "Spam space!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinnerLabel" type="Label" parent="."]
+offset_left = 572.0
+offset_top = 379.0
+offset_right = 1135.0
+offset_bottom = 533.0
+theme_override_font_sizes/font_size = 45

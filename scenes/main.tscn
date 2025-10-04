@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://bypeofscle1rd"]
+[gd_scene load_steps=18 format=4 uid="uid://bypeofscle1rd"]
 
 [ext_resource type="Texture2D" uid="uid://cmjxce8yrxekb" path="res://asstes/algne_map_smaller.png" id="2_681xg"]
 [ext_resource type="PackedScene" uid="uid://k0xk1bxb8cwk" path="res://scenes/PLAYER.tscn" id="2_vp82u"]
 [ext_resource type="Script" uid="uid://dvnjo70h8k508" path="res://scripts/exitgate.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://ci0sfhx8gjauy" path="res://scripts/gamestart-interaction/Aliminigameinteract.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://cwy0l5vc4a52a" path="res://scripts/gamestart-interaction/horseGameInteraction.gd" id="5_tbgi4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sugp2"]
 load_path = "res://.godot/imported/TX Tileset Grass.png-898fe6b82d5d85b8f6e187a5913c78d1.ctex"
@@ -17147,28 +17148,28 @@ position = Vector2(465, -1078)
 shape = SubResource("CircleShape2D_sugp2")
 
 [node name="PromptLabel" type="Label" parent="Aliminigameinteraction"]
-offset_left = 346.0
-offset_top = -1087.0
-offset_right = 401.0
-offset_bottom = -1028.0
+offset_left = 360.0
+offset_top = -1094.0
+offset_right = 415.0
+offset_bottom = -1035.0
 text = "Press E"
 
 [node name="DialogBox" type="Panel" parent="Aliminigameinteraction"]
 modulate = Color(0.7056, 0.8062134, 0.98, 0.96862745)
 self_modulate = Color(0.59607846, 0.62352943, 1, 0.7176471)
 clip_contents = true
-offset_left = 398.0
-offset_top = -1044.0
-offset_right = 628.0
-offset_bottom = -944.0
+offset_left = 443.0
+offset_top = -1013.0
+offset_right = 673.0
+offset_bottom = -913.0
 theme = SubResource("Theme_tefeu")
 
 [node name="DialogText" type="Label" parent="Aliminigameinteraction/DialogBox"]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 5.0
-offset_right = 222.0
-offset_bottom = 28.0
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 218.0
+offset_bottom = 51.0
 
 [node name="YesButton" type="Button" parent="Aliminigameinteraction/DialogBox"]
 layout_mode = 0
@@ -17179,6 +17180,54 @@ offset_bottom = 94.0
 text = "Yes please"
 
 [node name="NoButton" type="Button" parent="Aliminigameinteraction/DialogBox"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 62.0
+offset_right = 224.0
+offset_bottom = 93.0
+text = "No thank you"
+
+[node name="HorseGameInter" type="Area2D" parent="."]
+position = Vector2(199, -459)
+script = ExtResource("5_tbgi4")
+
+[node name="interactionphase" type="CollisionShape2D" parent="HorseGameInter"]
+position = Vector2(-852, -455)
+shape = SubResource("CircleShape2D_sugp2")
+
+[node name="PromptLabel" type="Label" parent="HorseGameInter"]
+offset_left = -810.0
+offset_top = -507.0
+offset_right = -755.0
+offset_bottom = -448.0
+text = "Press E"
+
+[node name="DialogBox" type="Panel" parent="HorseGameInter"]
+modulate = Color(0.7056, 0.8062134, 0.98, 0.96862745)
+self_modulate = Color(0.59607846, 0.62352943, 1, 0.7176471)
+clip_contents = true
+offset_left = -814.0
+offset_top = -434.0
+offset_right = -584.0
+offset_bottom = -334.0
+theme = SubResource("Theme_tefeu")
+
+[node name="DialogText" type="Label" parent="HorseGameInter/DialogBox"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 213.0
+offset_bottom = 51.0
+
+[node name="YesButton" type="Button" parent="HorseGameInter/DialogBox"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 63.0
+offset_right = 97.0
+offset_bottom = 94.0
+text = "Yes please"
+
+[node name="NoButton" type="Button" parent="HorseGameInter/DialogBox"]
 layout_mode = 0
 offset_left = 111.0
 offset_top = 62.0
