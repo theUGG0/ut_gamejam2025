@@ -49,7 +49,6 @@ func switch_game():
 		get_tree().change_scene_to_file(next_game_scene_path)
 
 func display_game_finish_dialogue(score, toy_id=null):
-	print(\"RAHHHH\", score, toy_id)
 	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ScoreLabel.text = \"Your score: %d\" % score
 	if not toy_id or toy_id not in GameManager.toy_textures:
 		$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyLabel.text = \"You didn't win a single toy! Loser!\"
