@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://01d3khpbgm5o"]
+[gd_scene load_steps=5 format=3 uid="uid://01d3khpbgm5o"]
 
+[ext_resource type="Script" uid="uid://brk78s76rejrb" path="res://whackamole.gd" id="1_rxrny"]
 [ext_resource type="Texture2D" uid="uid://caalky1ktsdrx" path="res://pildid/whack_a_mole_ekraan.png" id="1_w4al4"]
 [ext_resource type="PackedScene" uid="uid://cfnkicpmijcke" path="res://mole.tscn" id="2_gacpb"]
 [ext_resource type="PackedScene" uid="uid://c3e86msf8vr65" path="res://haamer.tscn" id="3_gacpb"]
 
 [node name="Whackamole" type="Node2D"]
+script = ExtResource("1_rxrny")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(972.00006, 598.00006)
@@ -17,3 +19,31 @@ scale = Vector2(0.38, 0.38)
 
 [node name="Haamer" parent="." instance=ExtResource("3_gacpb")]
 position = Vector2(3, -2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score_" type="Label" parent="CanvasLayer"]
+offset_left = 555.0
+offset_top = 1061.0
+offset_right = 595.0
+offset_bottom = 1130.0
+theme_override_colors/font_color = Color(0.32815367, 0.1762886, 0.034895442, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="Timer_" type="Label" parent="CanvasLayer"]
+offset_left = 545.0
+offset_top = 927.0
+offset_right = 585.0
+offset_bottom = 996.0
+theme_override_colors/font_color = Color(0.32941177, 0.1764706, 0.03529412, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="Finale" type="Label" parent="CanvasLayer"]
+offset_left = 707.0
+offset_top = 388.0
+offset_right = 1228.0
+offset_bottom = 553.0
+theme_override_colors/font_color = Color(0.32941177, 0.1764706, 0.03529412, 1)
+theme_override_colors/font_outline_color = Color(0.98670036, 0.9017465, 0.86416686, 1)
+theme_override_constants/outline_size = 70
+theme_override_font_sizes/font_size = 120

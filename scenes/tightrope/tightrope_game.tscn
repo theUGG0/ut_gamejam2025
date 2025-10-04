@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnw5gp0rb25a6"]
+
+[sub_resource type="Gradient" id="Gradient_qdpwb"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ds550"]
+gradient = SubResource("Gradient_qdpwb")
+
+[node name="TightropeGame" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1938.0
+offset_bottom = 1076.0
+color = Color(0.518526, 0.98868924, 0.9041916, 1)
+
+[node name="Rope" type="Line2D" parent="."]
+points = PackedVector2Array(-3, 555, 1978, 555)
+width = 20.0
+default_color = Color(0.6792593, 0.39160138, 0.34215435, 1)
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(947.99994, 364)
+scale = Vector2(0.80859375, 361.24997)
+texture = SubResource("GradientTexture1D_ds550")
+
+[node name="BalanceBarBackground" type="ColorRect" parent="."]
+offset_left = 801.0
+offset_top = 12.0
+offset_right = 1101.0
+offset_bottom = 62.0
+color = Color(0.23753929, 0.23753908, 0.23753911, 1)
+
+[node name="BalanceIndicator" type="ColorRect" parent="."]
+offset_left = 280.0
+offset_top = 85.0
+offset_right = 300.0
+offset_bottom = 135.0

@@ -121,7 +121,8 @@ func _race_finished(winner_name: String):
 		bg_music.stop()
 	
 	# Wait 3 seconds then return to main scene
-	print("Signal sent at: ", Time.get_ticks_msec())
+
+	await get_tree().create_timer(0.1).timeout
 	GameManager.finish_game("horsy race", 10, "whack_a_mole")
 	# await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://main.tscn")  # Change to your main scene path
