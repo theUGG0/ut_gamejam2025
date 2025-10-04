@@ -90,5 +90,6 @@ func _race_finished(winner_name: String):
 	winner_label.text = winner_name + " WON!"
 
 	# Wait 3 seconds then return to main scene
-	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file("res://main.tscn")  # Change to your main scene path
+	GameManager.finish_game("horsy race", 10, "whack_a_mole")
+	# await get_tree().create_timer(3.0).timeout
+	#get_tree().change_scene_to_file("res://main.tscn")  # Change to your main scene path

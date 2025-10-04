@@ -26,7 +26,7 @@ func display_toys():
 		if value not in GameManager.toy_textures:
 			print(\"Toy texture not defined for %s!\" % value)
 			pass
-		
+
 		var texrec = TextureRect.new()
 		texrec.texture = GameManager.toy_textures[value]
 		texrec.expand_mode = TextureRect.EXPAND_FIT_WIDTH

@@ -52,7 +52,7 @@ func finish_game(game_name: String, score: int, toy_id=null):
 	var tree = get_tree()
 	tree.change_scene_to_file("res://scenes/main.tscn")
 	
-	await tree.process_frame
+	# await tree.process_frame
 	await tree.process_frame
 	
 	emit_signal("_display_game_finish_dialogue", score, toy_id)
