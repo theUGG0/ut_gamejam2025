@@ -22,17 +22,22 @@ func update_score_counter():
 	$MarginContainer/MainGUIHContainer/ScoreContainer/ScoreLabel.text = \"Total score: %d\" % GameManager.get_total_score()
 
 func display_toys():
+	var visible_toy_count = 0
 	for value in GameManager.toys:
 		if value not in GameManager.toy_textures:
 			print(\"Toy texture not defined for %s!\" % value)
 			continue
-		
+	
+		visible_toy_count += 1
+	
 		var texrec = TextureRect.new()
 		texrec.texture = GameManager.toy_textures[value]
 		texrec.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 		texrec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texrec.set_meta(\"toy_id\", value)
 		$MarginContainer/MainGUIHContainer/ToyContainer.add_child(texrec)
+	
+	$MarginContainer/MainGUIHContainer/ToyContainer/ToyLabel.text = \"Toys (%d/12): \" % visible_toy_count
 
 func display_game_start_dialogue(game_name, game_scene_path):
 	if $GameWinDialogue.visible:
@@ -96,6 +101,7 @@ layout_mode = 2
 [node name="ScoreContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer"]
 custom_minimum_size = Vector2(26.34, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/MainGUIHContainer/ScoreContainer"]
 layout_mode = 2
@@ -105,6 +111,13 @@ theme_override_font_sizes/font_size = 32
 [node name="ToyContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer"]
 custom_minimum_size = Vector2(26.765, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ToyLabel" type="Label" parent="MarginContainer/MainGUIHContainer/ToyContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 32
+text = "Toys (0/12):"
 
 [node name="BeginGameDialogue" type="PanelContainer" parent="."]
 visible = false
