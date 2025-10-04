@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3e86msf8vr65"]
 
-[ext_resource type="Script" uid="uid://do2qd6euppa5y" path="res://whackamole/haamer.gd" id="1_ccc8y"]
+[ext_resource type="Script" uid="uid://do2qd6euppa5y" path="res://scenes/whackamole/haamer.gd" id="1_ccc8y"]
 [ext_resource type="Texture2D" uid="uid://ih70o5r32jk3" path="res://asstes/whackamole/haamer_transparent.png" id="2_ccc8y"]
 
 [node name="Haamer" type="CharacterBody2D"]
