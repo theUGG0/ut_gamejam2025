@@ -5,10 +5,6 @@
 [sub_resource type="GDScript" id="GDScript_vktbf"]
 script/source = "extends Control
 
-var toy_textures = {
-	\"whack_a_mole\": preload(\"res://asstes/minon.png\")
-}
-
 var next_game_scene_path = \"\"
 
 func _ready():
@@ -18,18 +14,20 @@ func _ready():
 	$BeginGameDialogue/VBoxContainer/ButtonMargins/NoButton.pressed.connect(hide_game_start_dialogue)
 	GameManager.connect(\"_display_game_start_dialogue\", display_game_start_dialogue)
 	GameManager.connect(\"_hide_game_start_dialogue\", hide_game_start_dialogue)
+	GameManager.connect(\"_display_game_finish_dialogue\", display_game_finish_dialogue)
+	$GameWinDialogue/MarginContainer/VBoxContainer/DismissButton.pressed.connect(hide_game_finish_dialogue)
 	
 func update_score_counter():
 	$MarginContainer/MainGUIHContainer/ScoreContainer/ScoreLabel.text = \"Total score: %d\" % GameManager.get_total_score()
 
 func display_toys():
 	for value in GameManager.toys:
-		if value not in toy_textures:
+		if value not in GameManager.toy_textures:
 			print(\"Toy texture not defined for %s!\" % value)
 			pass
 		
 		var texrec = TextureRect.new()
-		texrec.texture = toy_textures[value]
+		texrec.texture = GameManager.toy_textures[value]
 		texrec.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 		texrec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texrec.set_meta(\"toy_id\", value)
@@ -46,6 +44,20 @@ func hide_game_start_dialogue():
 func switch_game():
 	if next_game_scene_path != \"\":
 		get_tree().change_scene_to_file(next_game_scene_path)
+
+func display_game_finish_dialogue(score, toy_id=null):
+	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ScoreLabel.text = \"Your score: %d\" % score
+	if not toy_id or toy_id not in GameManager.toy_textures:
+		$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyLabel.text = \"You didn't win a single toy! Loser!\"
+		$GameWinDialogue.show()
+		return
+	
+	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyTexRec.texture = GameManager.toy_textures[toy_id]
+	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyLabel.text = GameManager.toy_names[toy_id]
+	$GameWinDialogue.show()	
+
+func hide_game_finish_dialogue():
+	$GameWinDialogue.hide()
 "
 
 [node name="MainGui" type="Control"]

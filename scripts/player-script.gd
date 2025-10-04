@@ -34,4 +34,4 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 func _ready():
-	position = Global.player_spawn_position
+	position = GameManager.player_spawn_pos
