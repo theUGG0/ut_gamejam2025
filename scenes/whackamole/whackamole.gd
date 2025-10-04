@@ -1,7 +1,7 @@
 extends Node2D
 
 var score := 0
-var game_time := 60.0
+var game_time := 30.0
 var game_over := false
 
 func _ready():

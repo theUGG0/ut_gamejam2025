@@ -54,6 +54,7 @@ func _give_toy(toy_name: String):
 func finish_game(game_name: String, score: int, toy_id=null):
 	
 	_give_toy(toy_id)
+	insert_game_score(game_name, score)
 	
 	var tree = get_tree()
 	
