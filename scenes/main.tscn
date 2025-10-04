@@ -1,12 +1,10 @@
-[gd_scene load_steps=22 format=4 uid="uid://bypeofscle1rd"]
+[gd_scene load_steps=21 format=4 uid="uid://bypeofscle1rd"]
 
 [ext_resource type="Texture2D" uid="uid://brlljkb5arefx" path="res://asstes/main_page/map.png" id="1_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cmjxce8yrxekb" path="res://asstes/algne_map_smaller.png" id="2_681xg"]
 [ext_resource type="PackedScene" uid="uid://k0xk1bxb8cwk" path="res://scenes/PLAYER.tscn" id="2_vp82u"]
 [ext_resource type="Script" uid="uid://dvnjo70h8k508" path="res://scripts/exitgate.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b00upu3gx4bw2" path="res://scenes/MainGUI.tscn" id="4_tefeu"]
-[ext_resource type="Script" uid="uid://ci0sfhx8gjauy" path="res://scripts/gamestart-interaction/Aliminigameinteract.gd" id="4_tbgi4"]
-[ext_resource type="Script" uid="uid://cwy0l5vc4a52a" path="res://scripts/gamestart-interaction/horseGameInteraction.gd" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bpj1xm5nwpnvj" path="res://asstes/main_page/varav.png" id="7_o6xl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
@@ -42248,6 +42246,8 @@ script = ExtResource("4_jyhfs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="MainGui" parent="CanvasLayer" instance=ExtResource("4_tefeu")]
+
 [node name="HorseGameInter" type="Area2D" parent="."]
 position = Vector2(-668, -922)
 script = SubResource("GDScript_jyhfs")
@@ -42274,8 +42274,8 @@ minigame_scene_path = "res://scenes/horsymang/horse_race.tscn"
 
 [node name="interactionphase" type="CollisionShape2D" parent="WhackAMoleInter"]
 shape = SubResource("CircleShape2D_sugp2")
-[node name="NoButton" type="Button" parent="HorseGameInter/DialogBox"]
-layout_mode = 0
+
+[node name="HorseGameInter_DialogBox#NoButton" type="Button" parent="."]
 offset_left = 111.0
 offset_top = 62.0
 offset_right = 224.0
