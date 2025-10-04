@@ -3,6 +3,12 @@ extends Node
 var game_scores: Dictionary = {}
 var toys: Array = ["whack_a_mole"]
 
+signal score_changed(game_name: String, game_score: int)
+signal added_toy(toy_name: String)
+signal _display_game_start_dialogue(game_name: String, game_scene_path: String)
+signal _hide_game_start_dialogue()
+signal _display_game_finish_dialogue(score: int, toy_id: String)
+
 # changes the score of a game in the game_scores directory to new_score
 func insert_game_score(game_name: String, new_score: int):
 	game_scores[game_name] = new_score
@@ -24,9 +30,15 @@ func get_total_score():
 		total += v
 	return total
 
-func give_toy(toy_name: String):
+func _give_toy(toy_name: String):
 	if toys.has(toy_name):
 		emit_signal("player_has_toy", toy_name)
 		return
 	toys.append(toy_name)
 	emit_signal("added_toy", toy_name)
+
+func display_game_start_dialogue(game_name: String, game_scene_path: String):
+	emit_signal("_display_game_start_dialogue", game_name, game_scene_path)
+
+func hide_game_start_dialogue():
+	emit_signal("_hide_game_start_dialogue")
