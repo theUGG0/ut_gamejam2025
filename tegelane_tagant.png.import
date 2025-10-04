@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctu7tmjogr6k3"
-path="res://.godot/imported/TX Plant with Shadow.png-10173fe1acfbe5297b821c0c9b8b7b98.ctex"
+uid="uid://boo6fknutxsdj"
+path="res://.godot/imported/tegelane_tagant.png-46aedc42fd467b0f3fd868be58bdea2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/TX Plant with Shadow.png"
-dest_files=["res://.godot/imported/TX Plant with Shadow.png-10173fe1acfbe5297b821c0c9b8b7b98.ctex"]
+source_file="res://tegelane_tagant.png"
+dest_files=["res://.godot/imported/tegelane_tagant.png-46aedc42fd467b0f3fd868be58bdea2f.ctex"]
 
 [params]
 

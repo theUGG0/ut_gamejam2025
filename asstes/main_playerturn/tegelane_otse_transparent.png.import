@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsfdwr3pac0xt"
-path="res://.godot/imported/TX Tileset Wall.png-57cde5b07998be6da8019949a66d8042.ctex"
+uid="uid://bnackuaup6gd"
+path="res://.godot/imported/tegelane_otse_transparent.png-f0a9bf3cd5f68911738e4f443fc90798.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/TX Tileset Wall.png"
-dest_files=["res://.godot/imported/TX Tileset Wall.png-57cde5b07998be6da8019949a66d8042.ctex"]
+source_file="res://asstes/main_playerturn/tegelane_otse_transparent.png"
+dest_files=["res://.godot/imported/tegelane_otse_transparent.png-f0a9bf3cd5f68911738e4f443fc90798.ctex"]
 
 [params]
 

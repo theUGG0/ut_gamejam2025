@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1s6orxa7j8ap"
-path="res://.godot/imported/TX Struct.png-fa5fcad6822bf7ab991768beae9babde.ctex"
+uid="uid://qcfh7fnio5s"
+path="res://.godot/imported/tegelane_paremale_transparent.png-efd202e62928611226ee78a3855a743f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/TX Struct.png"
-dest_files=["res://.godot/imported/TX Struct.png-fa5fcad6822bf7ab991768beae9babde.ctex"]
+source_file="res://asstes/main_playerturn/tegelane_paremale_transparent.png"
+dest_files=["res://.godot/imported/tegelane_paremale_transparent.png-efd202e62928611226ee78a3855a743f.ctex"]
 
 [params]
 

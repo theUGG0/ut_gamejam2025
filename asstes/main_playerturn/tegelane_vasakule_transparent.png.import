@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkmkwt77yewa7"
-path="res://.godot/imported/TX Tileset Stone Ground.png-4495d9c17bac951e6b45b6dbe3fd0f62.ctex"
+uid="uid://baoehp8pln1xg"
+path="res://.godot/imported/tegelane_vasakule_transparent.png-a96386c99215ba820b677696cd4e6028.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/TX Tileset Stone Ground.png"
-dest_files=["res://.godot/imported/TX Tileset Stone Ground.png-4495d9c17bac951e6b45b6dbe3fd0f62.ctex"]
+source_file="res://asstes/main_playerturn/tegelane_vasakule_transparent.png"
+dest_files=["res://.godot/imported/tegelane_vasakule_transparent.png-a96386c99215ba820b677696cd4e6028.ctex"]
 
 [params]
 
