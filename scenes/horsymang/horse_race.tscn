@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bti65wvs7kog0"]
+[gd_scene load_steps=7 format=3 uid="uid://bti65wvs7kog0"]
 
 [ext_resource type="Script" uid="uid://ctith11nemb36" path="res://scripts/horse_mini/HorseRace.gd" id="1_qtlb3"]
 [ext_resource type="Texture2D" uid="uid://fh72g6jhys7a" path="res://asstes/hobesed/punane obene.png" id="2_mvh2r"]
 [ext_resource type="Texture2D" uid="uid://bi6bbfs2ywwf6" path="res://asstes/hobesed/kollane obene.png" id="2_ud885"]
 [ext_resource type="Texture2D" uid="uid://di7p2t5ja6nk6" path="res://asstes/hobesed/sinine obene.png" id="4_twudv"]
 [ext_resource type="Texture2D" uid="uid://b2sej86cip4bn" path="res://asstes/hobesed/roheline obene.png" id="5_8u5ks"]
+[ext_resource type="AudioStream" uid="uid://x4xskahtqg63" path="res://SOund/143293__canukfa__horse-race-with-helicopter-overhead.mp3" id="6_twudv"]
 
 [node name="HorseRace" type="Node2D"]
 script = ExtResource("1_qtlb3")
@@ -89,3 +90,12 @@ offset_top = 375.0
 offset_right = 1260.0
 offset_bottom = 529.0
 theme_override_font_sizes/font_size = 45
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_twudv")
+
+[node name="GallopSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="LoseSound" type="AudioStreamPlayer2D" parent="."]
