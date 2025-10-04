@@ -15,6 +15,7 @@ func _ready():
 	GameManager.connect(\"_display_game_start_dialogue\", display_game_start_dialogue)
 	GameManager.connect(\"_hide_game_start_dialogue\", hide_game_start_dialogue)
 	GameManager.connect(\"_display_game_finish_dialogue\", display_game_finish_dialogue)
+	GameManager.connect(\"_hide_game_finish_dialogue\", hide_game_finish_dialogue)
 	$GameWinDialogue/MarginContainer/VBoxContainer/DismissButton.pressed.connect(hide_game_finish_dialogue)
 	
 func update_score_counter():
@@ -34,6 +35,8 @@ func display_toys():
 		$MarginContainer/MainGUIHContainer/ToyContainer.add_child(texrec)
 
 func display_game_start_dialogue(game_name, game_scene_path):
+	if $GameWinDialogue.visible:
+		return
 	$BeginGameDialogue/VBoxContainer/GameLabel.text = \"Play game %s?\" % game_name
 	next_game_scene_path = game_scene_path
 	$BeginGameDialogue.show()
@@ -46,6 +49,7 @@ func switch_game():
 		get_tree().change_scene_to_file(next_game_scene_path)
 
 func display_game_finish_dialogue(score, toy_id=null):
+	print(\"RAHHHH\", score, toy_id)
 	$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ScoreLabel.text = \"Your score: %d\" % score
 	if not toy_id or toy_id not in GameManager.toy_textures:
 		$GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer/ToyLabel.text = \"You didn't win a single toy! Loser!\"
@@ -185,7 +189,7 @@ text = "You finished the game!"
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_fonts/font = ExtResource("1_ac01h")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 51
 text = "You collected"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameWinDialogue/MarginContainer/VBoxContainer"]
@@ -195,12 +199,15 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 32
 
 [node name="ToyTexRec" type="TextureRect" parent="GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+expand_mode = 2
+stretch_mode = 5
 
 [node name="ToyLabel" type="Label" parent="GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50.53, 0)
