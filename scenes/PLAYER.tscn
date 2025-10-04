@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://k0xk1bxb8cwk"]
+
+[ext_resource type="Script" uid="uid://cyejkecvv7cm0" path="res://ut_gamejam2025/scripts/player-script.gd" id="1_33mmb"]
+[ext_resource type="Texture2D" uid="uid://hw5ux7gmsai2" path="res://ut_gamejam2025/asstes/player.png" id="1_epws3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_33mmb"]
+radius = 18.0
+height = 48.0
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_33mmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-95, -63)
+shape = SubResource("CapsuleShape2D_33mmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-95.5, -62.5)
+scale = Vector2(0.1695652, 0.15357144)
+texture = ExtResource("1_epws3")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
