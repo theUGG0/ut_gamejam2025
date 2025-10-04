@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://bypeofscle1rd"]
 
-[ext_resource type="Texture2D" uid="uid://bjvi4btj5dq8" path="res://ut_gamejam2025/asstes/TX Tileset Grass.png" id="1_g4fgd"]
-[ext_resource type="Texture2D" uid="uid://cmjxce8yrxekb" path="res://ut_gamejam2025/asstes/algne_map_smaller.png" id="2_681xg"]
-[ext_resource type="PackedScene" uid="uid://k0xk1bxb8cwk" path="res://ut_gamejam2025/scenes/PLAYER.tscn" id="2_vp82u"]
+[ext_resource type="Texture2D" uid="uid://bjvi4btj5dq8" path="res://asstes/TX Tileset Grass.png" id="1_g4fgd"]
+[ext_resource type="Texture2D" uid="uid://cmjxce8yrxekb" path="res://asstes/algne_map_smaller.png" id="2_681xg"]
+[ext_resource type="PackedScene" uid="uid://k0xk1bxb8cwk" path="res://scenes/PLAYER.tscn" id="2_vp82u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pehqu"]
 resource_name = "lehed"
