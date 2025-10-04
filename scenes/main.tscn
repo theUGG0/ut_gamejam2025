@@ -1,8 +1,17 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=4 uid="uid://bypeofscle1rd"]
+=======
+[gd_scene load_steps=15 format=4 uid="uid://bypeofscle1rd"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://bjvi4btj5dq8" path="res://asstes/TX Tileset Grass.png" id="1_g4fgd"]
 [ext_resource type="Texture2D" uid="uid://cmjxce8yrxekb" path="res://asstes/algne_map_smaller.png" id="2_681xg"]
 [ext_resource type="PackedScene" uid="uid://k0xk1bxb8cwk" path="res://scenes/PLAYER.tscn" id="2_vp82u"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" path="res://scripts/exitgate.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cj1h14mx6hhb3" path="res://scenes/MainGUI.tscn" id="5_tbgi4"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pehqu"]
 resource_name = "lehed"
@@ -17079,3 +17088,40 @@ tile_map_data = PackedByteArray("AADJ/4f/BAAAAAAAAADJ/4j/BAAAAAEAAADJ/4n/BAAAAAI
 tile_set = SubResource("TileSet_w1mgs")
 
 [node name="Player" parent="." instance=ExtResource("2_vp82u")]
+<<<<<<< Updated upstream
+=======
+position = Vector2(-15, 142)
+
+[node name="Sideborders" type="StaticBody2D" parent="."]
+
+[node name="right" type="CollisionShape2D" parent="Sideborders"]
+position = Vector2(-920.25, -860.25)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="left" type="CollisionShape2D" parent="Sideborders"]
+position = Vector2(1004, -864.3125)
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="up" type="CollisionShape2D" parent="Sideborders"]
+position = Vector2(23, -2121)
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="down-right" type="CollisionShape2D" parent="Sideborders"]
+position = Vector2(669, 379)
+shape = SubResource("RectangleShape2D_tefeu")
+
+[node name="down-right2" type="CollisionShape2D" parent="Sideborders"]
+position = Vector2(-600, 380)
+shape = SubResource("RectangleShape2D_o6xl0")
+
+[node name="exitGate" type="Area2D" parent="."]
+script = ExtResource("4_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exitGate"]
+position = Vector2(3, 501)
+shape = SubResource("RectangleShape2D_tipki")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="MainGui" parent="GUI" instance=ExtResource("5_tbgi4")]
+>>>>>>> Stashed changes
