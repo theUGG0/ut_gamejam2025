@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://d35rcb2xhmy0l"]
+
+[ext_resource type="Texture2D" uid="uid://dtal2ijpfimlm" path="res://scenes/dino_mang/playerGrey_up1.png" id="1_a3l72"]
+[ext_resource type="Script" uid="uid://cedm4i2dhung0" path="res://scenes/dino_mang/node_2d.gd" id="1_supt3"]
+[ext_resource type="Texture2D" uid="uid://dx0iro51u36e4" path="res://scenes/dino_mang/playerGrey_up2.png" id="2_supt3"]
+[ext_resource type="Texture2D" uid="uid://bsulcg7h18ph8" path="res://scenes/dino_mang/playerGrey_walk1.png" id="3_wliuc"]
+[ext_resource type="Texture2D" uid="uid://bqi2pbe5ns4uj" path="res://scenes/dino_mang/playerGrey_walk2.png" id="5_shoie"]
+[ext_resource type="Texture2D" uid="uid://cjhxrhiqg4uo4" path="res://scenes/dino_mang/piltnaidis_mang.jpg" id="6_wliuc"]
+[ext_resource type="Texture2D" uid="uid://dfnma21vsf02d" path="res://scenes/dino_mang/auto.jpg" id="7_qnxt1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcjhx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a3l72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_supt3")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wliuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_shoie")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shoie"]
+radius = 53.0
+height = 152.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shoie"]
+size = Vector2(197, 1925.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72qbi"]
+size = Vector2(109, 123)
+
+[node name="DinoTaust" type="Node2D"]
+position = Vector2(440, 254)
+
+[node name="Node2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_supt3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(-292, 534)
+sprite_frames = SubResource("SpriteFrames_rcjhx")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+visible = false
+position = Vector2(-293, 529)
+shape = SubResource("CapsuleShape2D_shoie")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+z_index = -1
+position = Vector2(524.49994, 356.5)
+scale = Vector2(3.1983333, 3.2416663)
+texture = ExtResource("6_wliuc")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+visible = false
+position = Vector2(518, 711)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_shoie")
+
+[node name="objektrite2D2" type="Sprite2D" parent="Ground"]
+position = Vector2(-66.99999, 530)
+scale = Vector2(0.08398131, 0.12857145)
+texture = ExtResource("7_qnxt1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+visible = false
+position = Vector2(-68.5, 529)
+shape = SubResource("RectangleShape2D_72qbi")
