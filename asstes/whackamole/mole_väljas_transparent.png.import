@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwsgnlil0ww2c"
-path="res://.godot/imported/mole_peidus_transparent.png-72416471a4a453114900208168387a33.ctex"
+uid="uid://cnt31rnifiofo"
+path="res://.godot/imported/mole_väljas_transparent.png-24dae0652181dd8b9526b625cc9167b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pildid/mole_peidus_transparent.png"
-dest_files=["res://.godot/imported/mole_peidus_transparent.png-72416471a4a453114900208168387a33.ctex"]
+source_file="res://asstes/whackamole/mole_väljas_transparent.png"
+dest_files=["res://.godot/imported/mole_väljas_transparent.png-24dae0652181dd8b9526b625cc9167b8.ctex"]
 
 [params]
 

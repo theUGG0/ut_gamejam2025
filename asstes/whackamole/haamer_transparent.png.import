@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ih70o5r32jk3"
-path="res://.godot/imported/haamer_transparent.png-e76b56e7efa9781e93c781cfdbde9454.ctex"
+path="res://.godot/imported/haamer_transparent.png-77c754c63413df5b5b41daa86da6bc4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pildid/haamer_transparent.png"
-dest_files=["res://.godot/imported/haamer_transparent.png-e76b56e7efa9781e93c781cfdbde9454.ctex"]
+source_file="res://asstes/whackamole/haamer_transparent.png"
+dest_files=["res://.godot/imported/haamer_transparent.png-77c754c63413df5b5b41daa86da6bc4b.ctex"]
 
 [params]
 

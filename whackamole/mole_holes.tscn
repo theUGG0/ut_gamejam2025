@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bl3ma4r0kl5f7"]
 
-[ext_resource type="Texture2D" uid="uid://cwsgnlil0ww2c" path="res://pildid/mole_peidus_transparent.png" id="1_x8pj7"]
+[ext_resource type="Texture2D" uid="uid://cwsgnlil0ww2c" path="res://asstes/whackamole/mole_peidus_transparent.png" id="1_x8pj7"]
 
 [node name="Mole_holes" type="Node2D"]
 

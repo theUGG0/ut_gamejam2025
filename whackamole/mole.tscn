@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfnkicpmijcke"]
 
-[ext_resource type="Texture2D" uid="uid://cnt31rnifiofo" path="res://pildid/mole_väljas_transparent.png" id="1_fo5de"]
-[ext_resource type="Script" uid="uid://ceiqx5bk3nvyh" path="res://mole.gd" id="1_m3rin"]
+[ext_resource type="Texture2D" uid="uid://cnt31rnifiofo" path="res://asstes/whackamole/mole_väljas_transparent.png" id="1_fo5de"]
+[ext_resource type="Script" uid="uid://ceiqx5bk3nvyh" path="res://whackamole/mole.gd" id="1_m3rin"]
 
 [node name="Mole" type="Node2D"]
 script = ExtResource("1_m3rin")
