@@ -59,7 +59,7 @@ position = Vector2(0, 7)
 zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(17, 42)
+position = Vector2(16.000008, 40.000008)
 scale = Vector2(0.06250001, 0.05140625)
 sprite_frames = SubResource("SpriteFrames_qoo5g")
-animation = &"idle_down"
+animation = &"idle_left"
