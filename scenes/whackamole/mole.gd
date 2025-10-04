@@ -22,14 +22,14 @@ func _input(event):
 			used = 0
 
 func _move_mole():
-	$Sprite2D2.texture = load("res://pildid/mole_peidus_transparent.png")
+	$Sprite2D2.texture = load("res://asstes/whackamole/mole_peidus_transparent.png")
 	await get_tree().create_timer(time).timeout
 	$Sprite2D2.visible = false
 	await get_tree().create_timer(time).timeout
 	global_position = positions.pick_random()
 	$Sprite2D2.visible = true
 	await get_tree().create_timer(time).timeout
-	$Sprite2D2.texture = load("res://pildid/mole_väljas_transparent.png")
+	$Sprite2D2.texture = load("res://asstes/whackamole/mole_väljas_transparent.png")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if get_tree().current_scene.game_over:

@@ -113639,7 +113639,7 @@ shape = SubResource("CircleShape2D_sugp2")
 position = Vector2(806, -944)
 script = SubResource("GDScript_jyhfs")
 minigame_name = "Whack-A-Mole"
-minigame_scene_path = "res://scenes/horsymang/horse_race.tscn"
+minigame_scene_path = "res://scenes/whackamole/whackamole.tscn"
 
 [node name="interactionphase" type="CollisionShape2D" parent="WhackAMoleInter"]
 position = Vector2(-135, 81)
