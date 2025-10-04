@@ -3,7 +3,7 @@
 
 extends Area2D
 
-@export var minigame_name: String = "Puzzle Game"  # Change this in inspector
+@export var minigame_name: String = "parim mäng"  # Change this in inspector
 @export var minigame_scene_path: String = "res://scenes/dino_mang/dino_taust.tscn"  # Path to your minigame scene
 
 var player_in_range = false
@@ -28,12 +28,31 @@ func _ready():
 	dialog_box.visible = false
 	
 	# Set dialog text
-	dialog_text.text = "Do you want to play minigame:\n" + minigame_name + "?"
+	dialog_text.text = "Play minigame:\n" + minigame_name + "?"
+
+var can_interact = true
 
 func _process(delta):
-	# Check for E key press when player is in range
-	if player_in_range and Input.is_action_just_pressed("ui_accept"):  # We'll map E to this
+	if player_in_range and can_interact and Input.is_action_just_pressed("ui_accept"):
+		print("\n=== E PRESSED ===")
 		_show_dialog()
+
+func _show_dialog():
+	can_interact = false  # Disable interaction
+	dialog_box.visible = true
+	prompt_label.visible = false
+
+func _on_no_pressed():
+	dialog_box.visible = false
+	prompt_label.visible = true
+	
+	# Small delay before allowing interaction again
+	await get_tree().create_timer(0.1).timeout
+	can_interact = true
+	
+	# Release inputs
+	Input.action_release("ui_accept")
+	get_viewport().gui_release_focus()
 
 func _on_body_entered(body):
 	if body is CharacterBody2D:  # Your player
@@ -45,17 +64,15 @@ func _on_body_exited(body):
 		player_in_range = false
 		prompt_label.visible = false
 		dialog_box.visible = false
+		
+		# Release focus when leaving area
+		if no_button:
+			no_button.release_focus()
+		if yes_button:
+			yes_button.release_focus()
+		get_viewport().gui_release_focus()
 
-func _show_dialog():
-	dialog_box.visible = true
-	prompt_label.visible = false
-	# Optional: pause game or disable player movement here
 
 func _on_yes_pressed():
 	# Load and switch to minigame scene
 	get_tree().change_scene_to_file(minigame_scene_path)
-
-func _on_no_pressed():
-	# Close dialog
-	dialog_box.visible = false
-	prompt_label.visible = true  # Show "Press E" again
