@@ -11,6 +11,12 @@ extends Node2D
 @onready var instruction_label = $InstructionLabel
 @onready var winner_label = $WinnerLabel
 
+# Sound references
+@onready var bg_music = $BackgroundMusic
+@onready var gallop_sound = $GallopSound
+@onready var win_sound = $WinSound
+@onready var lose_sound = $LoseSound 
+
 # Finish line position
 @onready var finish_line = $FinishLine
 var finish_x: float
@@ -20,22 +26,25 @@ var race_started = false
 var race_finished = false
 var countdown = 3
 
-# Horse speeds (pixels per key press for player, auto speed for AI)
-var player_speed = 35  # How much player moves per spacebar press
-var ai_speeds = []  # Random speeds for each AI horse
+# Horse speeds
+var player_speed = 35
+var ai_speeds = []
 
 func _ready():
 	finish_x = finish_line.global_position.x
 	winner_label.visible = false
 	
-	# Randomize AI speeds (slightly different for each horse)
+	# Play background music
+	if bg_music:
+		bg_music.play()
+	
+	# Randomize AI speeds
 	ai_speeds = [
-		randf_range(2.5, 4.0),  # AI Horse 1 speed per frame
-		randf_range(2.5, 4.0),  # AI Horse 2 speed per frame
-		randf_range(2.5, 4.0)   # AI Horse 3 speed per frame
+		randf_range(2.5, 4.0),
+		randf_range(2.5, 4.0),
+		randf_range(2.5, 4.0)
 	]
 	
-	# Start countdown
 	_start_countdown()
 
 func _start_countdown():
@@ -56,12 +65,22 @@ func _start_countdown():
 
 func _process(delta):
 	if not race_started or race_finished:
+		if Input.is_action_just_pressed("race_move"):
+			print("Space pressed but race_started=", race_started, " race_finished=", race_finished)
 		return
 	
+	print("Race is running, checking for input...")  # This should print every frame
+	
 	# Player horse movement
-	if Input.is_action_just_pressed("race_move"):  # Changed to action_pressed (not just_pressed)
+	if Input.is_action_just_pressed("race_move"):
 		print("SPACE PRESSED! Moving player horse")
+		print("Old position: ", player_horse.position.x)
 		player_horse.position.x += player_speed
+		print("New position: ", player_horse.position.x)
+		
+		# Play gallop sound
+		if gallop_sound:
+			gallop_sound.play()
 	
 	# AI horses move automatically
 	ai_horse1.position.x += ai_speeds[0]
@@ -88,7 +107,19 @@ func _race_finished(winner_name: String):
 	instruction_label.visible = false
 	winner_label.visible = true
 	winner_label.text = winner_name + " WON!"
-
+	
+	# Play win or lose sound based on who won
+	if winner_name == "You":
+		if win_sound:
+			win_sound.play()
+	else:
+		if lose_sound:
+			lose_sound.play()
+	
+	# Stop background music
+	if bg_music:
+		bg_music.stop()
+	
 	# Wait 3 seconds then return to main scene
 	GameManager.finish_game("horsy race", 10, "whack_a_mole")
 	# await get_tree().create_timer(3.0).timeout

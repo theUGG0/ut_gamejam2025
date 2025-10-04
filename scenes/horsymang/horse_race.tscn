@@ -1,22 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bti65wvs7kog0"]
+[gd_scene load_steps=9 format=3 uid="uid://bti65wvs7kog0"]
 
 [ext_resource type="Script" uid="uid://ctith11nemb36" path="res://scripts/horse_mini/HorseRace.gd" id="1_qtlb3"]
-
-[sub_resource type="Gradient" id="Gradient_gsrtf"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qtlb3"]
-gradient = SubResource("Gradient_gsrtf")
-
-[sub_resource type="Gradient" id="Gradient_mvh2r"]
-offsets = PackedFloat32Array(0, 0.56790125, 0.85333335, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.56790125, 0.56790125, 0.56790125, 1, 0.7, 0.7, 0.7, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ik4b5"]
-gradient = SubResource("Gradient_mvh2r")
-
-[sub_resource type="CurveTexture" id="CurveTexture_7kfb6"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ud885"]
+[ext_resource type="Texture2D" uid="uid://fh72g6jhys7a" path="res://asstes/hobesed/punane obene.png" id="2_mvh2r"]
+[ext_resource type="Texture2D" uid="uid://bi6bbfs2ywwf6" path="res://asstes/hobesed/kollane obene.png" id="2_ud885"]
+[ext_resource type="Texture2D" uid="uid://di7p2t5ja6nk6" path="res://asstes/hobesed/sinine obene.png" id="4_twudv"]
+[ext_resource type="Texture2D" uid="uid://b2sej86cip4bn" path="res://asstes/hobesed/roheline obene.png" id="5_8u5ks"]
+[ext_resource type="AudioStream" uid="uid://4c5v1jokm0uo" path="res://asstes/SOund/DRIVE(chosic.com).mp3" id="6_t2k3c"]
+[ext_resource type="AudioStream" uid="uid://beujprbionxl1" path="res://asstes/SOund/804776__designerschoice__bellhand-samsung-galaxy-smartphone-cu_desk-winning-signal_nicholas-judy_tdc.wav" id="7_8u5ks"]
+[ext_resource type="AudioStream" uid="uid://h4r6oxkokott" path="res://asstes/SOund/802628__jelloapocalypse__dull-boo.mp3" id="8_t2k3c"]
 
 [node name="HorseRace" type="Node2D"]
 script = ExtResource("1_qtlb3")
@@ -57,25 +48,25 @@ offset_bottom = 1009.0
 color = Color(0.77216774, 0.52057785, 0.38236484, 1)
 
 [node name="PlayerHorse" type="Sprite2D" parent="."]
-position = Vector2(88, 218.00002)
-scale = Vector2(3.0859375, 1.234375)
-texture = SubResource("GradientTexture2D_qtlb3")
+position = Vector2(214.69604, 222.99998)
+scale = Vector2(0.2777386, 0.26027346)
+texture = ExtResource("2_ud885")
 
 [node name="AIHorse1" type="Sprite2D" parent="."]
 modulate = Color(1, 0.22000003, 0.22000003, 1)
-position = Vector2(92, 447)
-scale = Vector2(1, 114.5)
-texture = SubResource("GradientTexture1D_ik4b5")
+position = Vector2(207.7031, 450.35934)
+scale = Vector2(0.28572917, 0.2927187)
+texture = ExtResource("2_mvh2r")
 
 [node name="AIHorse2" type="Sprite2D" parent="."]
-position = Vector2(94, 668.875)
-scale = Vector2(1, 108.25)
-texture = SubResource("CurveTexture_7kfb6")
+position = Vector2(200.81244, 662)
+scale = Vector2(0.24691677, 0.24449201)
+texture = ExtResource("4_twudv")
 
 [node name="AIHorse3" type="Sprite2D" parent="."]
-position = Vector2(99, 893.99994)
-scale = Vector2(254, 104)
-texture = SubResource("PlaceholderTexture2D_ud885")
+position = Vector2(197.25027, 909.00006)
+scale = Vector2(0.24233297, 0.2606248)
+texture = ExtResource("5_8u5ks")
 
 [node name="FinishLine" type="ColorRect" parent="."]
 offset_left = 1867.0
@@ -96,8 +87,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WinnerLabel" type="Label" parent="."]
-offset_left = 572.0
-offset_top = 379.0
-offset_right = 1135.0
-offset_bottom = 533.0
+offset_left = 697.0
+offset_top = 375.0
+offset_right = 1260.0
+offset_bottom = 529.0
 theme_override_font_sizes/font_size = 45
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_t2k3c")
+
+[node name="GallopSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8u5ks")
+
+[node name="LoseSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_t2k3c")
