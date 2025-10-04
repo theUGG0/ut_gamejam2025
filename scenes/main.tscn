@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://bypeofscle1rd"]
+[gd_scene load_steps=15 format=4 uid="uid://bypeofscle1rd"]
 
 [ext_resource type="Texture2D" uid="uid://cmjxce8yrxekb" path="res://asstes/algne_map_smaller.png" id="2_681xg"]
 [ext_resource type="PackedScene" uid="uid://k0xk1bxb8cwk" path="res://scenes/PLAYER.tscn" id="2_vp82u"]
 [ext_resource type="Script" uid="uid://dvnjo70h8k508" path="res://scripts/exitgate.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b00upu3gx4bw2" path="res://scenes/MainGUI.tscn" id="5_tbgi4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sugp2"]
 load_path = "res://.godot/imported/TX Tileset Grass.png-898fe6b82d5d85b8f6e187a5913c78d1.ctex"
@@ -17131,3 +17132,7 @@ script = ExtResource("4_jyhfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exitGate"]
 position = Vector2(3, 501)
 shape = SubResource("RectangleShape2D_tipki")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainGui" parent="CanvasLayer" instance=ExtResource("5_tbgi4")]
