@@ -48,12 +48,15 @@ func _give_toy(toy_name: String):
 	emit_signal("added_toy", toy_name)
 
 func finish_game(game_name: String, score: int, toy_id=null):
+	print("Scene change start at: ", Time.get_ticks_msec())
 	emit_signal("_hide_game_start_dialogue")
 	var tree = get_tree()
 	tree.change_scene_to_file("res://scenes/main.tscn")
 	
 	# await tree.process_frame
+	print("Scene changed at: ", Time.get_ticks_msec())
 	await tree.process_frame
+	print("After 1 frame at: ", Time.get_ticks_msec())
 	
 	emit_signal("_display_game_finish_dialogue", score, toy_id)
 	
