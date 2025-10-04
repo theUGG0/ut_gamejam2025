@@ -65,12 +65,18 @@ func _start_countdown():
 
 func _process(delta):
 	if not race_started or race_finished:
+		if Input.is_action_just_pressed("race_move"):
+			print("Space pressed but race_started=", race_started, " race_finished=", race_finished)
 		return
+	
+	print("Race is running, checking for input...")  # This should print every frame
 	
 	# Player horse movement
 	if Input.is_action_just_pressed("race_move"):
 		print("SPACE PRESSED! Moving player horse")
+		print("Old position: ", player_horse.position.x)
 		player_horse.position.x += player_speed
+		print("New position: ", player_horse.position.x)
 		
 		# Play gallop sound
 		if gallop_sound:
