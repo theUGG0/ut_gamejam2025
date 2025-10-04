@@ -75,6 +75,7 @@ func _on_body_exited(body):
 
 
 func _on_yes_pressed():
+	print("RAHH")
 	# Load and switch to minigame scene
 	Global.player_spawn_position = position  # Your coordinates
 	get_tree().change_scene_to_file("res://scenes/dino_mang/dino_taust.tscn")
