@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjpctiqef7t4a"
-path="res://.godot/imported/TX Props with Shadow.png-0e6374ea174a49550ff41e4b175f08da.ctex"
+uid="uid://d2ejcr4e4ms7p"
+path="res://.godot/imported/tegelane_tagant_transparent.png-1c26e4d43d053fd921d958459cd25336.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/TX Props with Shadow.png"
-dest_files=["res://.godot/imported/TX Props with Shadow.png-0e6374ea174a49550ff41e4b175f08da.ctex"]
+source_file="res://asstes/main_playerturn/tegelane_tagant_transparent.png"
+dest_files=["res://.godot/imported/tegelane_tagant_transparent.png-1c26e4d43d053fd921d958459cd25336.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn8kww6uing6u"
-path="res://.godot/imported/TX Props.png-42be7a24b93a2962d971ff33a905a5fb.ctex"
+uid="uid://becuiklt3bj7"
+path="res://.godot/imported/tegelane_vasakule.png-b1565240d3499c2cada41f97e0f891cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/TX Props.png"
-dest_files=["res://.godot/imported/TX Props.png-42be7a24b93a2962d971ff33a905a5fb.ctex"]
+source_file="res://tegelane_vasakule.png"
+dest_files=["res://.godot/imported/tegelane_vasakule.png-b1565240d3499c2cada41f97e0f891cd.ctex"]
 
 [params]
 
