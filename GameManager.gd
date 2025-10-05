@@ -12,7 +12,12 @@ var toy_textures = {
 	"flappy_bird_big": preload("res://asstes/toys/big/flappy_bird_big.png"),
 	"tight_rope_big": preload("res://asstes/toys/big/tight_rope_big.png"),
 	"laburint_big": preload("res://asstes/toys/big/laburint_big.png"),
-	"whack_a_mole_big": preload("res://asstes/toys/big/whack_a_mole_big.png")
+	"whack_a_mole_big": preload("res://asstes/toys/big/whack_a_mole_big.png"),
+	"horse_race_small": preload("res://asstes/toys/small/horse_race_small.png"),
+	"flappy_bird_small": preload("res://asstes/toys/small/flappy_bird_small.png"),
+	"tight_rope_small": preload("res://asstes/toys/small/tight_rope_small.png"),
+	"laburint_small": preload("res://asstes/toys/small/laburint_small.png"),
+	"whack_a_mole_small": preload("res://asstes/toys/small/whack_a_mole_small.png")
 }
 
 var toy_names = {
@@ -21,7 +26,12 @@ var toy_names = {
 	"flappy_bird_big": "Trixie",
 	"tight_rope_big": "Avocado",
 	"laburint_big": "Chocolate Cookie",
-	"whack_a_mole_big": "Strawberry Shortcake"
+	"whack_a_mole_big": "Strawberry Shortcake",
+	"horse_race_small": "Dotty",
+	"flappy_bird_small": "Teddy",
+	"tight_rope_small": "One-Eye Joe",
+	"laburint_small": "Bubbles",
+	"whack_a_mole_small": "Ladybug"
 }
 
 signal score_changed(game_name: String, game_score: int)
