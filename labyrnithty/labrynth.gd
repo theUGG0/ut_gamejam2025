@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 func _on_coin_collected():
 	if game_over:
 		return
-	score += 1
+	score += 10
 	$tegelane/Camera2D/CanvasLayer/Score.text = "Score: %d" % score
 
 func _on_exit_reached(body: Node):
@@ -40,4 +40,14 @@ func _on_exit_reached(body: Node):
 		return
 	if body is CharacterBody2D:
 		game_over = true
+		
 		$tegelane/Camera2D/CanvasLayer/EndMessage.text = "Congrats! Score: %d" % score
+		await get_tree().create_timer(3).timeout
+
+		var player_prize = null
+		if score >= 50:
+			player_prize = "laburint_big"
+		elif score >= 20:
+			player_prize = "laburint_small"
+		
+		GameManager.finish_game("laburint", score, player_prize)

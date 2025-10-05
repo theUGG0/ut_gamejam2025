@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d00nwm6ljeet8"
-path="res://.godot/imported/bear_coin.png-b9c36dd9342876d8762ef6cce7ac1ab0.ctex"
+path="res://.godot/imported/bear_coin.png-16b677240adbe4daef1094ae5192701e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pildid/bear_coin.png"
-dest_files=["res://.godot/imported/bear_coin.png-b9c36dd9342876d8762ef6cce7ac1ab0.ctex"]
+source_file="res://labyrnithty/pildid/bear_coin.png"
+dest_files=["res://.godot/imported/bear_coin.png-16b677240adbe4daef1094ae5192701e.ctex"]
 
 [params]
 

@@ -12,16 +12,16 @@ func _process(delta: float) -> void:
 
 	var direction = Vector2.ZERO
 
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
 		$Sprite2D.rotation_degrees = -90
-	elif Input.is_action_pressed("right"):
+	elif Input.is_action_pressed("ui_right"):
 		direction.x += 1
 		$Sprite2D.rotation_degrees = 90
-	elif Input.is_action_pressed("up"):
+	elif Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 		$Sprite2D.rotation_degrees = 0
-	elif Input.is_action_pressed("down"):
+	elif Input.is_action_pressed("ui_down"):
 		direction.y += 1
 		$Sprite2D.rotation_degrees = 180
 

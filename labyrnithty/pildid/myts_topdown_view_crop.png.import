@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fa2qvnet5lna"
-path="res://.godot/imported/myts_topdown_view_crop.png-bbba55f62e8b3ca33d66ea7c18ec1ae5.ctex"
+path="res://.godot/imported/myts_topdown_view_crop.png-65e3716f22e7fad2b7546e817ff5ed58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pildid/myts_topdown_view_crop.png"
-dest_files=["res://.godot/imported/myts_topdown_view_crop.png-bbba55f62e8b3ca33d66ea7c18ec1ae5.ctex"]
+source_file="res://labyrnithty/pildid/myts_topdown_view_crop.png"
+dest_files=["res://.godot/imported/myts_topdown_view_crop.png-65e3716f22e7fad2b7546e817ff5ed58.ctex"]
 
 [params]
 
