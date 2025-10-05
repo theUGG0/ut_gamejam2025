@@ -117,11 +117,15 @@ func game_over():
 	
 	if time_survived > high_score:
 		high_score = time_survived
-		game_over_label.text = "FELL OFF!\n Your time: " % time_survived
+		game_over_label.text = "FELL OFF!\n Your time: %d" % time_survived
 	else:
 		game_over_label.text = "FELL OFF!\nTime: %.1f s\nBest: %.1f s" % [time_survived, high_score]
 	
 	instructions_label.visible = false
+	if (time_survived > 25):
+		GameManager.finish_game("Tight Rope", int(time_survived*2), "tight_rope_big")
+	else:
+		GameManager.finish_game("Tight Rope", int(time_survived*2), "tight_rope_small")
 
 func reset_game():
 	balance = 0.0

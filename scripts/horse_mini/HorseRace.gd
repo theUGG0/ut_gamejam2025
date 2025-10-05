@@ -132,6 +132,7 @@ func _race_finished(horses: Array):
 	
 	
 	await get_tree().create_timer(3).timeout
+
 	GameManager.finish_game("horsy race", player_score, "whack_a_mole")
 	# await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://main.tscn")  # Change to your main scene path

@@ -113534,7 +113534,7 @@ func _on_body_exited(body):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sugp2"]
-radius = 48.010414
+radius = 56.008926
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -168)
@@ -113600,6 +113600,9 @@ polygon = PackedVector2Array(-689, -1885, -551, -1880, -465, -1939, -466, -2037,
 [node name="poosas" type="CollisionPolygon2D" parent="Sideborders/house-borders"]
 polygon = PackedVector2Array(590, -1850, 653, -1919, 670, -1937, 706, -1945, 730, -1930, 745, -1904, 767, -1903, 779, -1879, 840, -1780, 756, -1832, 716, -1835, 670, -1841)
 
+[node name="sirkuslipp" type="CollisionPolygon2D" parent="Sideborders/house-borders"]
+polygon = PackedVector2Array(-701, -1384, -700, -1411, -673, -1408, -654, -1425, -622, -1419, -628, -1412, -622, -1401, -645, -1405, -661, -1394, -681, -1384)
+
 [node name="exitGate" type="Area2D" parent="."]
 position = Vector2(90, 388)
 script = ExtResource("4_jyhfs")
@@ -113624,6 +113627,16 @@ minigame_scene_path = "res://scenes/horsymang/horse_race.tscn"
 
 [node name="interactionphase" type="CollisionShape2D" parent="HorseGameInter"]
 position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_sugp2")
+
+[node name="TightRope" type="Area2D" parent="."]
+position = Vector2(-695, -929)
+script = SubResource("GDScript_jyhfs")
+minigame_name = "Tight Rope"
+minigame_scene_path = "res://scenes/tightrope/tightrope_game.tscn"
+
+[node name="interactionphase" type="CollisionShape2D" parent="TightRope"]
+position = Vector2(-8, 2)
 shape = SubResource("CircleShape2D_sugp2")
 
 [node name="Dino Dig" type="Area2D" parent="."]
