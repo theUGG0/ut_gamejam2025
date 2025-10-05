@@ -30,6 +30,10 @@ var countdown = 3
 var player_speed = 35
 var ai_speeds = []
 
+# Player scoring
+var player_score = 0
+var player_score_penalty = 0
+
 func _ready():
 	finish_x = finish_line.global_position.x
 	winner_label.visible = false
@@ -66,7 +70,7 @@ func _start_countdown():
 func _process(delta):
 	if not race_started or race_finished:
 		if Input.is_action_just_pressed("race_move"):
-			print("Space pressed but race_started=", race_started, " race_finished=", race_finished)
+			player_score_penalty += 0.2
 		return
 		
 	# Player horse movement
@@ -87,22 +91,32 @@ func _process(delta):
 
 func _check_winners():
 	var horses = [
-		{"name": "You", "horse": player_horse},
-		{"name": "Red Horse", "horse": ai_horse1},
-		{"name": "Blue Horse", "horse": ai_horse2},
-		{"name": "Green Horse", "horse": ai_horse3}
+		{"name": "You", "horse_obj": player_horse},
+		{"name": "Red Horse", "horse_obj": ai_horse1},
+		{"name": "Blue Horse", "horse_obj": ai_horse2},
+		{"name": "Green Horse", "horse_obj": ai_horse3}
 	]
 	
-	for horse_data in horses:
-		if horse_data.horse.global_position.x >= finish_x:
-			_race_finished(horse_data.name)
-			return
+	for horse in horses:
+		if horse["horse_obj"].position.x >= 1860:
+			_race_finished(horses)
 
-func _race_finished(winner_name: String):
+func _race_finished(horses: Array):
 	race_finished = true
+	for checking_horse in horses:
+		checking_horse["ranking"] = len(horses.filter(func(horse): return horse["horse_obj"].position.x > checking_horse["horse_obj"].position.x))
+	
+	var winner_name = null
+	
+	for horse in horses:
+		if horse["ranking"] == 0:
+			winner_label.text = "%s won!" % horse["name"]
+			winner_name = horse["name"]
+		if horse["name"] == "You":
+			player_score = int(( 4 - horse["ranking"]) * 10 - min(player_score_penalty, 10))
+	
 	instruction_label.visible = false
 	winner_label.visible = true
-	winner_label.text = winner_name + " WON!"
 	
 	# Play win or lose sound based on who won
 	if winner_name == "You":
@@ -118,9 +132,15 @@ func _race_finished(winner_name: String):
 	
 	
 	await get_tree().create_timer(3).timeout
-	if winner_name == "You":
-		GameManager.finish_game("Horce Race", 40, "horse_race_big")
-	else:
-		GameManager.finish_game("Horce Race", 10, "horse_race_small")
+	
+	var player_prize = null
+	if player_score > 35:
+		player_prize = "horse_race_big"
+	elif player_score > 15:
+		player_prize = "horse_race_small"
+
+	GameManager.finish_game("horse_race", player_score, player_prize)
+
+
 	# await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://main.tscn")  # Change to your main scene path
