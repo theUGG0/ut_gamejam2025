@@ -47,7 +47,10 @@ func _ready() -> void:
 
 # changes the score of a game in the game_scores directory to new_score
 func insert_game_score(game_name: String, new_score: int):
-	game_scores[game_name] = new_score
+	if game_name not in game_scores.keys():
+		game_scores[game_name] = new_score
+	elif game_scores[game_name] < new_score:
+		game_scores[game_name] = new_score
 	emit_signal("score_changed", game_name, game_scores[game_name])
 
 # increases the score of a game in the game_scores directory by score_change

@@ -8,7 +8,7 @@ const SCROLL_SP : int=4
 var screen_size : Vector2i
 var pipes : Array
 var ground : int
-const PIPE_D : int = 100
+const PIPE_D : int = 250
 const PIPE_R : int = 200
 
 # Called when the node enters the scene tree for the first time.
@@ -88,9 +88,9 @@ func stop_game():
 	await get_tree().create_timer(2).timeout
 	
 	var player_prize = null
-	if score > 20:
+	if score > 9:
 		player_prize = "flappy_bird_big"
-	elif score > 10:
+	elif score > 4:
 		player_prize = "flappy_bird_small"
 
 	GameManager.finish_game("flappy_bird", score, player_prize)

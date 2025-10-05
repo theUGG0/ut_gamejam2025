@@ -19,6 +19,7 @@ texture = ExtResource("1_dyb2i")
 
 [node name="Lind" parent="." instance=ExtResource("6_j3tj2")]
 position = Vector2(23, 277)
+scale = Vector2(1.54, 1.54)
 
 [node name="Ground" parent="." instance=ExtResource("4_ix2yq")]
 
