@@ -106,7 +106,7 @@ size_flags_horizontal = 3
 [node name="ScoreLabel" type="Label" parent="MarginContainer/MainGUIHContainer/ScoreContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ac01h")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 
 [node name="ToyContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer"]
 custom_minimum_size = Vector2(26.765, 0)
@@ -116,7 +116,7 @@ size_flags_horizontal = 3
 [node name="ToyLabel" type="Label" parent="MarginContainer/MainGUIHContainer/ToyContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ac01h")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 text = "Toys (0/12):"
 
 [node name="BeginGameDialogue" type="PanelContainer" parent="."]
@@ -158,12 +158,16 @@ theme_override_constants/margin_bottom = 20
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 26
 text = "Yes"
 
 [node name="NoButton" type="Button" parent="BeginGameDialogue/VBoxContainer/ButtonMargins"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 26
 text = "No"
 
 [node name="GameWinDialogue" type="PanelContainer" parent="."]
@@ -212,7 +216,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ac01h")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 
 [node name="ToyTexRec" type="TextureRect" parent="GameWinDialogue/MarginContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
@@ -227,10 +231,13 @@ custom_minimum_size = Vector2(50.53, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 45
 
 [node name="DismissButton" type="Button" parent="GameWinDialogue/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 26
 text = "Dismiss"

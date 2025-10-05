@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bti65wvs7kog0"]
+[gd_scene load_steps=11 format=3 uid="uid://bti65wvs7kog0"]
 
 [ext_resource type="Script" uid="uid://ctith11nemb36" path="res://scripts/horse_mini/HorseRace.gd" id="1_qtlb3"]
 [ext_resource type="Texture2D" uid="uid://wrmxrw741jac" path="res://asstes/hobesed/racetrack.png" id="2_fatiw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://di7p2t5ja6nk6" path="res://asstes/hobesed/sinine obene.png" id="4_twudv"]
 [ext_resource type="Texture2D" uid="uid://b2sej86cip4bn" path="res://asstes/hobesed/roheline obene.png" id="5_8u5ks"]
 [ext_resource type="AudioStream" uid="uid://4c5v1jokm0uo" path="res://asstes/SOund/DRIVE(chosic.com).mp3" id="6_t2k3c"]
+[ext_resource type="FontFile" uid="uid://bpj3qe63c5ryv" path="res://asstes/SuperAdorable-MAvyp.ttf" id="7_4pfc3"]
 [ext_resource type="AudioStream" uid="uid://beujprbionxl1" path="res://asstes/SOund/804776__designerschoice__bellhand-samsung-galaxy-smartphone-cu_desk-winning-signal_nicholas-judy_tdc.wav" id="7_8u5ks"]
 [ext_resource type="AudioStream" uid="uid://h4r6oxkokott" path="res://asstes/SOund/802628__jelloapocalypse__dull-boo.mp3" id="8_t2k3c"]
 
@@ -47,11 +48,12 @@ offset_bottom = 1084.0
 color = Color(0.97356266, 0.971633, 0.9865882, 1)
 
 [node name="InstructionLabel" type="Label" parent="."]
-modulate = Color(0.2582343, 0.2933222, 0.14173043, 1)
+modulate = Color(0.12941177, 0.27058825, 0.12941177, 1)
 offset_left = 148.0
 offset_top = 8.0
 offset_right = 1765.0
 offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("7_4pfc3")
 theme_override_font_sizes/font_size = 64
 text = "Spam space!"
 horizontal_alignment = 1
