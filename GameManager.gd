@@ -20,7 +20,6 @@ var toy_textures = {
 }
 
 var toy_names = {
-	"test": "Minion Bob",
 	"horse_race_big": "Golden Freddy",
 	"flappy_bird_big": "Trixie",
 	"tight_rope_big": "Avocado",
@@ -42,6 +41,8 @@ signal _display_game_finish_dialogue(score: int, toy_id: String)
 
 func _ready() -> void:
 	preloaded_scenes["main"] = preload("res://scenes/main.tscn")
+	#for toy_id in toy_names.keys():
+	#	toys.append(toy_id)
 
 # changes the score of a game in the game_scores directory to new_score
 func insert_game_score(game_name: String, new_score: int):

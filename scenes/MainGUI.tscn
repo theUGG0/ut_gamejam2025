@@ -75,7 +75,7 @@ func leave_game():
 	get_tree().quit()
 
 func view_toys():
-	pass
+	get_tree().change_scene_to_file(\"res://scenes/toy_shelf.tscn\")
 "
 
 [node name="MainGui" type="Control"]
