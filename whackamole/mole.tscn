@@ -9,7 +9,7 @@ script = ExtResource("1_m3rin")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-23, -367, -78, -351, -117, -284, -134, -171, -130, -79, -130, 38, -134, 93, -107, 109, -59, 115, 10, 118, 94, 107, 126, 88, 129, 12, 127, -84, 129, -160, 125, -220, 111, -292, 92, -340, 48, -367)
+polygon = PackedVector2Array(0, -369, -59, -356, -93, -335, -123, -248, -134, -156, -132, -92, -131, -57, -29, -39, 71, -57, 127, -98, 129, -196, 114, -279, 91, -348, 49, -369)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(77, 128)

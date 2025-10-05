@@ -17,9 +17,6 @@ texture = ExtResource("1_w4al4")
 position = Vector2(1228, 784.99994)
 scale = Vector2(0.38, 0.38)
 
-[node name="Haamer" parent="." instance=ExtResource("3_gacpb")]
-position = Vector2(3, -2)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Score_" type="Label" parent="CanvasLayer"]
@@ -47,3 +44,6 @@ theme_override_colors/font_color = Color(0.32941177, 0.1764706, 0.03529412, 1)
 theme_override_colors/font_outline_color = Color(0.98670036, 0.9017465, 0.86416686, 1)
 theme_override_constants/outline_size = 70
 theme_override_font_sizes/font_size = 120
+
+[node name="Haamer" parent="." instance=ExtResource("3_gacpb")]
+position = Vector2(3, -2)

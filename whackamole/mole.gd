@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if hit:
+		used = 1
 		_move_mole()
 		hit = false
 
@@ -27,6 +28,7 @@ func _move_mole():
 	$Sprite2D2.visible = false
 	await get_tree().create_timer(time).timeout
 	global_position = positions.pick_random()
+	await get_tree().create_timer(time).timeout
 	$Sprite2D2.visible = true
 	await get_tree().create_timer(time).timeout
 	$Sprite2D2.texture = load("res://pildid/mole_väljas_transparent.png")
@@ -34,7 +36,6 @@ func _move_mole():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if get_tree().current_scene.game_over:
 		return
-	if clicked and used == 0:
+	if clicked and used == 0 and hit == false:
 		hit = true
-		used = 1
 		emit_signal("mole_hit")
