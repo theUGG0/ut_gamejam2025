@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bti65wvs7kog0"]
+[gd_scene load_steps=10 format=3 uid="uid://bti65wvs7kog0"]
 
 [ext_resource type="Script" uid="uid://ctith11nemb36" path="res://scripts/horse_mini/HorseRace.gd" id="1_qtlb3"]
+[ext_resource type="Texture2D" uid="uid://wrmxrw741jac" path="res://asstes/hobesed/racetrack.png" id="2_fatiw"]
 [ext_resource type="Texture2D" uid="uid://fh72g6jhys7a" path="res://asstes/hobesed/punane obene.png" id="2_mvh2r"]
 [ext_resource type="Texture2D" uid="uid://bi6bbfs2ywwf6" path="res://asstes/hobesed/kollane obene.png" id="2_ud885"]
 [ext_resource type="Texture2D" uid="uid://di7p2t5ja6nk6" path="res://asstes/hobesed/sinine obene.png" id="4_twudv"]
@@ -13,39 +14,8 @@
 script = ExtResource("1_qtlb3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="background" type="ColorRect" parent="Sprite2D"]
-offset_right = 1927.0
-offset_bottom = 1085.0
-color = Color(0.51160675, 0.76, 0.4788, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Sprite2D"]
-offset_left = -125.0
-offset_top = 118.0
-offset_right = 2121.0
-offset_bottom = 317.0
-color = Color(0.77216774, 0.52057785, 0.38236484, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Sprite2D"]
-offset_left = -124.0
-offset_top = 350.0
-offset_right = 2122.0
-offset_bottom = 549.0
-color = Color(0.77216774, 0.52057785, 0.38236484, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Sprite2D"]
-offset_left = -123.0
-offset_top = 578.0
-offset_right = 2123.0
-offset_bottom = 777.0
-color = Color(0.77216774, 0.52057785, 0.38236484, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="Sprite2D"]
-offset_left = -126.0
-offset_top = 810.0
-offset_right = 2120.0
-offset_bottom = 1009.0
-color = Color(0.77216774, 0.52057785, 0.38236484, 1)
+position = Vector2(960, 540)
+texture = ExtResource("2_fatiw")
 
 [node name="PlayerHorse" type="Sprite2D" parent="."]
 position = Vector2(214.69604, 222.99998)
@@ -69,6 +39,7 @@ scale = Vector2(0.24233297, 0.2606248)
 texture = ExtResource("5_8u5ks")
 
 [node name="FinishLine" type="ColorRect" parent="."]
+visible = false
 offset_left = 1867.0
 offset_top = -24.0
 offset_right = 1961.0
