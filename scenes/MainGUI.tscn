@@ -20,6 +20,10 @@ func _ready():
 	$GameWinDialogue/MarginContainer/VBoxContainer/DismissButton.pressed.connect(hide_game_finish_dialogue)
 	$MarginContainer/MainGUIHContainer/GUIButtonsContainer/ViewToysButton.pressed.connect(view_toys)
 	$MarginContainer/MainGUIHContainer/GUIButtonsContainer/ExitButton.pressed.connect(leave_game)
+	$TutorialDialogue/MarginContainer/VBoxContainer/DismissButton.pressed.connect(hide_tutorial)
+	if GameManager.tutorial_not_shown:
+		GameManager.tutorial_not_shown = false
+		show_tutorial()
 		
 func update_score_counter():
 	$MarginContainer/MainGUIHContainer/ScoreContainer/ScoreLabel.text = \"Total score: %d\" % GameManager.get_total_score()
@@ -70,6 +74,12 @@ func display_game_finish_dialogue(score, toy_id=null):
 
 func hide_game_finish_dialogue():
 	$GameWinDialogue.hide()
+
+func hide_tutorial():
+	$TutorialDialogue.hide()
+
+func show_tutorial():
+	$TutorialDialogue.show()
 
 func leave_game():
 	get_tree().quit()
@@ -272,6 +282,65 @@ theme_override_fonts/font = ExtResource("1_ac01h")
 theme_override_font_sizes/font_size = 45
 
 [node name="DismissButton" type="Button" parent="GameWinDialogue/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 26
+text = "Dismiss"
+
+[node name="TutorialDialogue" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -179.0
+offset_right = 401.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TutorialDialogue"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TutorialDialogue/MarginContainer"]
+layout_mode = 2
+
+[node name="HeaderLabel" type="Label" parent="TutorialDialogue/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 71
+text = "Tutorial"
+
+[node name="SubtitleLabel" type="Label" parent="TutorialDialogue/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 36
+text = "Run around the fair with WASD and enter tents  to play minigames!
+Get a good enough score and you can collect a toy
+Check the toys you already have in the top right
+Walk through the gate or press the button in the top right
+to leave the fair(game)
+
+Tight Rope game - Balance with A and D
+Whack-A-Mole - Click LMB to whack the moles! Make sure to hit them 
+right on top of their heads
+Flappy bird - Jump with LMB
+Horse Racing - Spam SPACE to move forward
+Labyrnithy - Navigate the maze with WASD"
+
+[node name="DismissButton" type="Button" parent="TutorialDialogue/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4

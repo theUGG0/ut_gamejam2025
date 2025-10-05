@@ -1,6 +1,7 @@
 extends Node
 
 var preloaded_scenes: Dictionary = {}
+var tutorial_not_shown = true
 
 var game_scores: Dictionary = {}
 var toys: Array = []
