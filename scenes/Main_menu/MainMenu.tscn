@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnho0g5plxaaf"]
+
+[ext_resource type="Texture2D" uid="uid://dm5nepvqh03ry" path="res://asstes/menupage/menu_back.png" id="1_7fxya"]
+[ext_resource type="Script" uid="uid://c202oks5lykf6" path="res://scripts/MainMenu.gd" id="1_mjgpt"]
+[ext_resource type="Texture2D" uid="uid://42d8i24xr1e4" path="res://asstes/menupage/exit.png" id="2_7fxya"]
+[ext_resource type="Texture2D" uid="uid://dcd1doiu04e6d" path="res://asstes/menupage/play.png" id="2_la5qv"]
+[ext_resource type="Texture2D" uid="uid://clr4ttxtunov2" path="res://asstes/menupage/playhover.png" id="4_4to00"]
+[ext_resource type="Texture2D" uid="uid://c4ye81kebdlae" path="res://asstes/menupage/exithover.png" id="6_swo8r"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjgpt")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1914.0
+offset_bottom = 1063.0
+texture = ExtResource("1_7fxya")
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 509.0
+offset_right = 1748.0
+offset_bottom = 822.0
+texture_normal = ExtResource("2_la5qv")
+texture_hover = ExtResource("4_4to00")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 734.0
+offset_right = 1768.0
+offset_bottom = 1033.0
+texture_normal = ExtResource("2_7fxya")
+texture_hover = ExtResource("6_swo8r")
