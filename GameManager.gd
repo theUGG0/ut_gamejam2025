@@ -7,11 +7,21 @@ var toys: Array = []
 var player_spawn_pos: Vector2 = Vector2(0, 2)
 
 var toy_textures = {
-	"whack_a_mole": preload("res://asstes/minon.png")
+	"whack_a_mole": preload("res://asstes/minon.png"),
+	"horse_race_big": preload("res://asstes/toys/big/horse_race_big.png"),
+	"flappy_bird_big": preload("res://asstes/toys/big/flappy_bird_big.png"),
+	"tight_rope_big": preload("res://asstes/toys/big/tight_rope_big.png"),
+	"laburint_big": preload("res://asstes/toys/big/laburint_big.png"),
+	"whack_a_mole_big": preload("res://asstes/toys/big/whack_a_mole_big.png")
 }
 
 var toy_names = {
-	"whack_a_mole": "Minion Bob"
+	"whack_a_mole": "Minion Bob",
+	"horse_race_big": "Golden Freddy",
+	"flappy_bird_big": "Trixie",
+	"tight_rope_big": "Avocado",
+	"laburint_big": "Chocolate Cookie",
+	"whack_a_mole_big": "Strawberry Shortcake"
 }
 
 signal score_changed(game_name: String, game_score: int)
