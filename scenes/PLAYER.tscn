@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://k0xk1bxb8cwk"]
+[gd_scene load_steps=15 format=3 uid="uid://k0xk1bxb8cwk"]
 
 [ext_resource type="Script" uid="uid://cyejkecvv7cm0" path="res://scripts/player-script.gd" id="1_33mmb"]
 [ext_resource type="Texture2D" uid="uid://bnackuaup6gd" path="res://asstes/main_playerturn/tegelane_otse_transparent.png" id="2_rh38l"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://d2ejcr4e4ms7p" path="res://asstes/main_playerturn/tegelane_tagant_transparent.png" id="5_fqe5j"]
 [ext_resource type="Texture2D" uid="uid://diddmk2ioxurj" path="res://asstes/main_playerturn/tegelane_paremale_LISA.png" id="6_54cwh"]
 [ext_resource type="Texture2D" uid="uid://b7jiplmxpjhjd" path="res://asstes/main_playerturn/tegelane_tagant_LISA.png" id="8_0k08p"]
+[ext_resource type="Texture2D" uid="uid://bcoie72eu3u8v" path="res://asstes/main_playerturn/tegelane_vasakule_LISA_2.png" id="9_0k08p"]
 [ext_resource type="Texture2D" uid="uid://bds3i2gwyakf0" path="res://asstes/main_playerturn/tegelane_otse_LISA1.png" id="9_yovmp"]
 [ext_resource type="Texture2D" uid="uid://dy74wbhhv626y" path="res://asstes/main_playerturn/tegelane_otse_LISA2.png" id="10_u2uwr"]
+[ext_resource type="Texture2D" uid="uid://biexsuhf77ohk" path="res://asstes/main_playerturn/tegelane_paremale_LISA_2.png" id="11_yovmp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_33mmb"]
 radius = 42.0
@@ -65,6 +67,9 @@ animations = [{
 "texture": ExtResource("4_ubknb")
 }, {
 "duration": 1.0,
+"texture": ExtResource("9_0k08p")
+}, {
+"duration": 1.0,
 "texture": ExtResource("3_hruy7")
 }],
 "loop": true,
@@ -74,6 +79,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_54cwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yovmp")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_kbg3k")
@@ -111,4 +119,4 @@ zoom = Vector2(2, 2)
 position = Vector2(16.000008, 40.000008)
 scale = Vector2(0.06250001, 0.05140625)
 sprite_frames = SubResource("SpriteFrames_qoo5g")
-animation = &"idle_up"
+animation = &"walk_right"
