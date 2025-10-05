@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(3).timeout
 		
 		var prize = null
-		if score < 50:
+		if score < 20:
 			prize = "whack_a_mole_small"
 		else:
 			prize = "whack_a_mole_big"

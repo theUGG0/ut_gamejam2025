@@ -118,6 +118,9 @@ func _race_finished(winner_name: String):
 	
 	
 	await get_tree().create_timer(3).timeout
-	GameManager.finish_game("horsy race", 10, "whack_a_mole")
+	if winner_name == "You":
+		GameManager.finish_game("Horce Race", 40, "horse_race_big")
+	else:
+		GameManager.finish_game("Horce Race", 10, "horse_race_small")
 	# await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://main.tscn")  # Change to your main scene path
