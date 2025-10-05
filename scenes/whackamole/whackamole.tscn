@@ -24,10 +24,10 @@ position = Vector2(3, -2)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Score_" type="Label" parent="CanvasLayer"]
-offset_left = 555.0
-offset_top = 1061.0
-offset_right = 595.0
-offset_bottom = 1130.0
+offset_left = 546.0
+offset_top = 1003.0
+offset_right = 586.0
+offset_bottom = 1072.0
 theme_override_colors/font_color = Color(0.32815367, 0.1762886, 0.034895442, 1)
 theme_override_fonts/font = ExtResource("5_a63ci")
 theme_override_font_sizes/font_size = 50
