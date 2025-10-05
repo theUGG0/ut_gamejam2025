@@ -41,7 +41,7 @@ func display_toys():
 		texrec.set_meta(\"toy_id\", value)
 		$MarginContainer/MainGUIHContainer/ToyContainer/ToyChildContainer.add_child(texrec)
 	
-	$MarginContainer/MainGUIHContainer/ToyContainer/ToyChildContainer/ToyLabel.text = \"Toys (%d/12): \" % visible_toy_count
+	$MarginContainer/MainGUIHContainer/ToyContainer/ToyChildContainer/ToyLabel.text = \"Toys (%d/10): \" % visible_toy_count
 
 func display_game_start_dialogue(game_name, game_scene_path):
 	if $GameWinDialogue.visible:

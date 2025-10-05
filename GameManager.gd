@@ -3,7 +3,7 @@ extends Node
 var preloaded_scenes: Dictionary = {}
 
 var game_scores: Dictionary = {}
-var toys: Array = ["test"]
+var toys: Array = []
 var player_spawn_pos: Vector2 = Vector2(0, 2)
 
 var toy_textures = {
@@ -42,8 +42,6 @@ signal _display_game_finish_dialogue(score: int, toy_id: String)
 
 func _ready() -> void:
 	preloaded_scenes["main"] = preload("res://scenes/main.tscn")
-	for key in toy_names.keys():
-		toys.append(key)
 
 # changes the score of a game in the game_scores directory to new_score
 func insert_game_score(game_name: String, new_score: int):
