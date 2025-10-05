@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnw5gp0rb25a6"]
+
+[ext_resource type="Script" uid="uid://b167vr4t7lhav" path="res://scripts/tight-script/tightrope-balance.gd" id="1_1kawf"]
+[ext_resource type="Texture2D" uid="uid://cbhm1lnpmbedl" path="res://asstes/tightrope/tudrukkaru.png" id="2_hlnk3"]
+[ext_resource type="Texture2D" uid="uid://cndwnsatoslxo" path="res://asstes/tightrope/52059ce6-a86f-4a9d-a1ea-d5413eb87cec.png" id="2_lbea8"]
+
+[node name="TightropeGame" type="Node2D"]
+position = Vector2(3, -3)
+script = ExtResource("1_1kawf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(952, 566)
+texture = ExtResource("2_lbea8")
+
+[node name="Rope" type="Line2D" parent="."]
+position = Vector2(437.68103, -1435.1692)
+rotation = 0.21643777
+scale = Vector2(1.0162195, 3.7580705)
+points = PackedVector2Array(-2, 547, 958, 556, 1928, 547)
+default_color = Color(0.28, 0.161, 0.14, 1)
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(963.00006, 651)
+scale = Vector2(0.5190753, 0.65667814)
+texture = ExtResource("2_hlnk3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="BalanceBar" type="ColorRect" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(0.29, 0.29, 0.29, 1)
+
+[node name="Indicator" type="ColorRect" parent="UI/BalanceBar"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = -21.0
+offset_right = 298.0
+offset_bottom = 39.0
+color = Color(0.37075004, 0.75, 0.195, 1)
+
+[node name="TimerLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GameOverLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InstructionsLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0

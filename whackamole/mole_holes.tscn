@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl3ma4r0kl5f7"]
+
+[ext_resource type="Texture2D" uid="uid://cwsgnlil0ww2c" path="res://asstes/whackamole/mole_peidus_transparent.png" id="1_x8pj7"]
+
+[node name="Mole_holes" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(763.99994, 816)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1025, 721.99994)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(785, 581.9999)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1031, 505.9999)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(842, 398.99988)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(1222, 402.99988)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(1269, 585.9999)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(1269, 825.99994)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_x8pj7")
