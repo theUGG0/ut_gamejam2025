@@ -1,18 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7bqgc4n2hdc2"]
+[gd_scene load_steps=5 format=3 uid="uid://byy7ldnk3cdi2"]
 
-[ext_resource type="Script" uid="uid://d22bvj373kxnk" path="res://scenes/dino_game/liikuv_objekt.gd" id="1_bd3j2"]
 [ext_resource type="Texture2D" uid="uid://d05rppkfch0bu" path="res://scenes/dino_game/kuusk.png" id="1_pe15e"]
 
+[sub_resource type="GDScript" id="GDScript_kbsa8"]
+script/source = "extends CharacterBody2D
+
+var screen_width
+var half_character_width
+const SPEED = 400
+func _ready():
+	screen_width = get_viewport_rect().size.x
+	position.y = 1000
+	#half_character_width = $Sprite2D/LiikuvObjekt.texture.get_width()/2.0
+	
+func _physics_process(delta: float) -> void:
+	velocity.x = -SPEED
+	move_and_slide()
+	print(position)
+	if position.x < -10:
+		position.x = screen_width + 50
+	
+		
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.has_method('die'):
+		
+		body.die() # Replace with function body.
+"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ul83o"]
-radius = 8.5440035
+radius = 35.014282
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tewnf"]
-radius = 17.373596
+radius = 26.879333
 height = 136.00116
 
 [node name="LiikuvObjekt" type="CharacterBody2D"]
 position = Vector2(745, 361)
-script = ExtResource("1_bd3j2")
+script = SubResource("GDScript_kbsa8")
 
 [node name="Kuusk" type="Sprite2D" parent="."]
 z_index = 1
