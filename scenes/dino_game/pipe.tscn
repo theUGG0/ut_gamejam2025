@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxowwbjsbg8on"]
+
+[ext_resource type="Script" uid="uid://dn18rsppgtsu" path="res://scenes/dino_game/pipe.gd" id="1_8qm48"]
+[ext_resource type="Texture2D" uid="uid://d05rppkfch0bu" path="res://scenes/dino_game/kuusk.png" id="2_ynfmt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qm48"]
+radius = 27.186127
+height = 431.10278
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ynfmt"]
+radius = 24.73632
+height = 392.80823
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pta7"]
+radius = 15.0
+height = 472.0
+
+[node name="Pipe" type="Area2D"]
+script = ExtResource("1_8qm48")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-8.000011, 1100)
+rotation = 0.14729905
+shape = SubResource("CapsuleShape2D_8qm48")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(17.000004, 781)
+scale = Vector2(0.3865, 1.322054)
+texture = ExtResource("2_ynfmt")
+offset = Vector2(0, 380)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-10.000003, 204)
+rotation = 3.0525808
+scale = Vector2(0.2896477, 1.2016665)
+texture = ExtResource("2_ynfmt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(26, 357)
+rotation = 3.1155272
+shape = SubResource("CapsuleShape2D_ynfmt")
+
+[node name="Scorearea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scorearea"]
+position = Vector2(110, 719)
+shape = SubResource("CapsuleShape2D_3pta7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Scorearea" to="." method="_on_scorearea_body_entered"]

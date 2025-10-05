@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7bqgc4n2hdc2"]
+
+[ext_resource type="Script" uid="uid://d22bvj373kxnk" path="res://scenes/dino_game/liikuv_objekt.gd" id="1_bd3j2"]
+[ext_resource type="Texture2D" uid="uid://d05rppkfch0bu" path="res://scenes/dino_game/kuusk.png" id="1_pe15e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ul83o"]
+radius = 8.5440035
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tewnf"]
+radius = 17.373596
+height = 136.00116
+
+[node name="LiikuvObjekt" type="CharacterBody2D"]
+position = Vector2(745, 361)
+script = ExtResource("1_bd3j2")
+
+[node name="Kuusk" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.095250085, 0.123333305)
+texture = ExtResource("1_pe15e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ul83o")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(81, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-86, -27)
+rotation = -3.0536213
+shape = SubResource("CapsuleShape2D_tewnf")
