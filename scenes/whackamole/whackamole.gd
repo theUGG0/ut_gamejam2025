@@ -4,11 +4,18 @@ var score := 0
 var game_time := 30.0
 var game_over := false
 
+@export var music_file: AudioStream  
+
+@onready var music_player = AudioStreamPlayer.new()
+
 func _ready():
 	$CanvasLayer/Score_.text = "Score: %d" % score
 	$CanvasLayer/Timer_.text = "Time: %d" % int(game_time)
 
 	$Mole.mole_hit.connect(_on_mole_hit)
+	add_child(music_player)
+	music_player.stream = music_file
+	music_player.play()
 
 func _process(delta: float) -> void:
 	if game_over:
@@ -27,7 +34,9 @@ func _process(delta: float) -> void:
 		else:
 			prize = "whack_a_mole_big"
 		
+		music_player.stop()
 		GameManager.finish_game("whack_a_mole", score, prize)
+		
 	
 	$CanvasLayer/Timer_.text = "Time: %d" % int(game_time)
 
