@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc0btorhfrwvh"]
+
+[ext_resource type="Texture2D" uid="uid://cdrfnj1qkv60l" path="res://pildid/maze.png" id="1_xxkwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxkwp"]
+size = Vector2(57, 34)
+
+[node name="Walls" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(604, 325.00003)
+scale = Vector2(0.38, 0.274)
+texture = ExtResource("1_xxkwp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(536, 74, 536, -62, -43, -71, -38, 699, 1239, 693, 1238, -40, 721, -64, 730, 79, 675, 100, 666, 169, 646, 194, 492, 191, 490, 214, 637, 218, 650, 309, 677, 312, 667, 197, 955, 190, 978, 199, 982, 280, 1029, 283, 1025, 155, 826, 155, 821, 56, 880, 61, 896, 99, 1086, 100, 1112, 234, 1114, 411, 1092, 421, 970, 420, 968, 505, 800, 513, 804, 549, 738, 552, 732, 504, 558, 510, 555, 576, 625, 590, 630, 634, 607, 653, 521, 652, 443, 653, 421, 625, 417, 591, 489, 584, 481, 414, 388, 409, 386, 520, 355, 538, 120, 530, 100, 255, 25, 255, 22, 148, 111, 155, 116, 77, 283, 79, 289, 131, 187, 142, 182, 278, 265, 277, 270, 338, 181, 347, 190, 462, 316, 468, 310, 368, 543, 373, 555, 443, 731, 454, 727, 399, 855, 403, 858, 431, 788, 441, 791, 455, 899, 448, 896, 379, 1043, 377, 1041, 334, 918, 332, 910, 358, 870, 360, 855, 328, 775, 331, 765, 273, 918, 280, 914, 247, 729, 247, 738, 339, 720, 351, 671, 355, 674, 428, 618, 432, 610, 358, 414, 355, 400, 302, 580, 306, 579, 278, 373, 266, 372, 337, 316, 344, 310, 223, 430, 224, 426, 130, 596, 132, 593, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(99.5, 208)
+shape = SubResource("RectangleShape2D_xxkwp")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(520, -4, 738, -3, 736, -72, 520, -79)
