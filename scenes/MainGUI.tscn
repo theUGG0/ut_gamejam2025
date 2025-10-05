@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2650i4fs8k67"]
+[gd_scene load_steps=4 format=3 uid="uid://c2650i4fs8k67"]
 
 [ext_resource type="FontFile" uid="uid://bpj3qe63c5ryv" path="res://asstes/SuperAdorable-MAvyp.ttf" id="1_ac01h"]
+[ext_resource type="Texture2D" uid="uid://cmejhu8f0y5ib" path="res://asstes/menu_back.png" id="3_qovhs"]
 
 [sub_resource type="GDScript" id="GDScript_vktbf"]
 script/source = "extends Control
@@ -17,7 +18,9 @@ func _ready():
 	GameManager.connect(\"_display_game_finish_dialogue\", display_game_finish_dialogue)
 	GameManager.connect(\"_hide_game_finish_dialogue\", hide_game_finish_dialogue)
 	$GameWinDialogue/MarginContainer/VBoxContainer/DismissButton.pressed.connect(hide_game_finish_dialogue)
-	
+	$MarginContainer/MainGUIHContainer/GUIButtonsContainer/ViewToysButton.pressed.connect(view_toys)
+	$MarginContainer/MainGUIHContainer/GUIButtonsContainer/ExitButton.pressed.connect(leave_game)
+		
 func update_score_counter():
 	$MarginContainer/MainGUIHContainer/ScoreContainer/ScoreLabel.text = \"Total score: %d\" % GameManager.get_total_score()
 
@@ -32,12 +35,13 @@ func display_toys():
 	
 		var texrec = TextureRect.new()
 		texrec.texture = GameManager.toy_textures[value]
-		texrec.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+		texrec.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 		texrec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		texrec.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		texrec.set_meta(\"toy_id\", value)
-		$MarginContainer/MainGUIHContainer/ToyContainer.add_child(texrec)
+		$MarginContainer/MainGUIHContainer/ToyContainer/ToyChildContainer.add_child(texrec)
 	
-	$MarginContainer/MainGUIHContainer/ToyContainer/ToyLabel.text = \"Toys (%d/12): \" % visible_toy_count
+	$MarginContainer/MainGUIHContainer/ToyContainer/ToyChildContainer/ToyLabel.text = \"Toys (%d/12): \" % visible_toy_count
 
 func display_game_start_dialogue(game_name, game_scene_path):
 	if $GameWinDialogue.visible:
@@ -66,9 +70,16 @@ func display_game_finish_dialogue(score, toy_id=null):
 
 func hide_game_finish_dialogue():
 	$GameWinDialogue.hide()
+
+func leave_game():
+	get_tree().quit()
+
+func view_toys():
+	pass
 "
 
 [node name="MainGui" type="Control"]
+texture_filter = 4
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,38 +97,65 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -481.0
-offset_right = 481.0
+offset_left = -661.0
+offset_right = 661.0
 offset_bottom = 89.0
 grow_horizontal = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 10
 
 [node name="MainGUIHContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ScoreContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer"]
 custom_minimum_size = Vector2(26.34, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/MainGUIHContainer/ScoreContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ac01h")
 theme_override_font_sizes/font_size = 45
 
-[node name="ToyContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer"]
-custom_minimum_size = Vector2(26.765, 0)
+[node name="ToyContainer" type="MarginContainer" parent="MarginContainer/MainGUIHContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
 
-[node name="ToyLabel" type="Label" parent="MarginContainer/MainGUIHContainer/ToyContainer"]
+[node name="ToyChildContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer/ToyContainer"]
 layout_mode = 2
+
+[node name="ToyLabel" type="Label" parent="MarginContainer/MainGUIHContainer/ToyContainer/ToyChildContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ac01h")
 theme_override_font_sizes/font_size = 45
 text = "Toys (0/12):"
+
+[node name="GUIButtonsContainer" type="HBoxContainer" parent="MarginContainer/MainGUIHContainer"]
+custom_minimum_size = Vector2(219.365, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="ViewToysButton" type="Button" parent="MarginContainer/MainGUIHContainer/GUIButtonsContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 32
+text = "Toys"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/MainGUIHContainer/GUIButtonsContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_ac01h")
+theme_override_font_sizes/font_size = 32
+text = "Leave"
 
 [node name="BeginGameDialogue" type="PanelContainer" parent="."]
 visible = false
@@ -241,3 +279,16 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("1_ac01h")
 theme_override_font_sizes/font_size = 26
 text = "Dismiss"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047395833
+anchor_top = -0.59166664
+anchor_right = 0.9526042
+anchor_bottom = 0.08981481
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("3_qovhs")
+metadata/_edit_use_anchors_ = true

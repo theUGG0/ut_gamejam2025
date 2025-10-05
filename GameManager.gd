@@ -3,11 +3,10 @@ extends Node
 var preloaded_scenes: Dictionary = {}
 
 var game_scores: Dictionary = {}
-var toys: Array = []
+var toys: Array = ["test"]
 var player_spawn_pos: Vector2 = Vector2(0, 2)
 
 var toy_textures = {
-	"whack_a_mole": preload("res://asstes/minon.png"),
 	"horse_race_big": preload("res://asstes/toys/big/horse_race_big.png"),
 	"flappy_bird_big": preload("res://asstes/toys/big/flappy_bird_big.png"),
 	"tight_rope_big": preload("res://asstes/toys/big/tight_rope_big.png"),
@@ -21,7 +20,7 @@ var toy_textures = {
 }
 
 var toy_names = {
-	"whack_a_mole": "Minion Bob",
+	"test": "Minion Bob",
 	"horse_race_big": "Golden Freddy",
 	"flappy_bird_big": "Trixie",
 	"tight_rope_big": "Avocado",
@@ -43,6 +42,8 @@ signal _display_game_finish_dialogue(score: int, toy_id: String)
 
 func _ready() -> void:
 	preloaded_scenes["main"] = preload("res://scenes/main.tscn")
+	for key in toy_names.keys():
+		toys.append(key)
 
 # changes the score of a game in the game_scores directory to new_score
 func insert_game_score(game_name: String, new_score: int):
