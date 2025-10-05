@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://qy4mtpwm3gf1"]
+
+[ext_resource type="Texture2D" uid="uid://h3kxcdbikknb" path="res://Flappy_bird/taust.png" id="1_jhgw4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shoie"]
+size = Vector2(50.62523, 5517)
+
+[node name="Ground" type="Area2D"]
+position = Vector2(-20, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2491.5, 1055.3125)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_shoie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2043.9999, 1063)
+scale = Vector2(2.359375, 0.05231483)
+texture = ExtResource("1_jhgw4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

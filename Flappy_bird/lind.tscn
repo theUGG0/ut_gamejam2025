@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://3ojinmbqnfno"]
+
+[ext_resource type="Script" uid="uid://e4lodgcigtaj" path="res://Flappy_bird/lind.gd" id="1_2cs5y"]
+[ext_resource type="Texture2D" uid="uid://klalydhmiue5" path="res://Flappy_bird/karu1.png" id="1_tx78f"]
+[ext_resource type="Texture2D" uid="uid://bpbfvrq4kyrsk" path="res://Flappy_bird/karu2.png" id="2_2cs5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu0gl"]
+size = Vector2(68.265625, 43.820313)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6leik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tx78f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2cs5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lind" type="CharacterBody2D"]
+script = ExtResource("1_2cs5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(275, 135)
+shape = SubResource("RectangleShape2D_tu0gl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(272.29333, 138.7428)
+scale = Vector2(0.075608924, 0.06548559)
+sprite_frames = SubResource("SpriteFrames_6leik")
+frame_progress = 0.22005229
