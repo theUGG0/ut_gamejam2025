@@ -63,3 +63,6 @@ func _physics_process(delta: float):
 
 func _ready():
 	position = GameManager.player_spawn_pos
+
+func _exit_tree():
+	GameManager.player_spawn_pos = position
