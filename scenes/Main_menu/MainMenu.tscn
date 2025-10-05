@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnho0g5plxaaf"]
+[gd_scene load_steps=8 format=3 uid="uid://dnho0g5plxaaf"]
 
 [ext_resource type="Texture2D" uid="uid://dm5nepvqh03ry" path="res://asstes/menupage/menu_back.png" id="1_7fxya"]
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_mjgpt"]
+[ext_resource type="Script" uid="uid://c202oks5lykf6" path="res://scripts/MainMenu.gd" id="1_mjgpt"]
 [ext_resource type="Texture2D" uid="uid://42d8i24xr1e4" path="res://asstes/menupage/exit.png" id="2_7fxya"]
 [ext_resource type="Texture2D" uid="uid://dcd1doiu04e6d" path="res://asstes/menupage/play.png" id="2_la5qv"]
 [ext_resource type="Texture2D" uid="uid://clr4ttxtunov2" path="res://asstes/menupage/playhover.png" id="4_4to00"]
 [ext_resource type="Texture2D" uid="uid://c4ye81kebdlae" path="res://asstes/menupage/exithover.png" id="6_swo8r"]
+[ext_resource type="Texture2D" uid="uid://yjrhesa5ejj6" path="res://asstes/menupage/00f2637f-a309-4453-80f5-6621cbbb1e70.png" id="7_0pn1q"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,9 +19,10 @@ script = ExtResource("1_mjgpt")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = 2.0
-offset_right = 1914.0
-offset_bottom = 1063.0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 1917.0
+offset_bottom = 1057.0
 texture = ExtResource("1_7fxya")
 
 [node name="MenuContainer" type="VBoxContainer" parent="."]
@@ -32,10 +34,10 @@ alignment = 1
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 509.0
-offset_right = 1748.0
-offset_bottom = 822.0
+offset_left = 464.0
+offset_top = 519.0
+offset_right = 1764.0
+offset_bottom = 832.0
 texture_normal = ExtResource("2_la5qv")
 texture_hover = ExtResource("4_4to00")
 
@@ -47,3 +49,10 @@ offset_right = 1768.0
 offset_bottom = 1033.0
 texture_normal = ExtResource("2_7fxya")
 texture_hover = ExtResource("6_swo8r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="00f2637fA309445380f56621Cbbb1e70" type="Sprite2D" parent="."]
+position = Vector2(964, 271)
+scale = Vector2(0.7317708, 0.6398148)
+texture = ExtResource("7_0pn1q")
