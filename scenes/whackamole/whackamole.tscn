@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://01d3khpbgm5o"]
+[gd_scene load_steps=6 format=3 uid="uid://01d3khpbgm5o"]
 
 [ext_resource type="Script" uid="uid://brk78s76rejrb" path="res://scenes/whackamole/whackamole.gd" id="1_rxrny"]
 [ext_resource type="Texture2D" uid="uid://caalky1ktsdrx" path="res://asstes/whackamole/whack_a_mole_ekraan.png" id="1_w4al4"]
 [ext_resource type="PackedScene" uid="uid://cfnkicpmijcke" path="res://scenes/whackamole/mole.tscn" id="2_gacpb"]
 [ext_resource type="PackedScene" uid="uid://c3e86msf8vr65" path="res://scenes/whackamole/haamer.tscn" id="3_gacpb"]
+[ext_resource type="FontFile" uid="uid://bpj3qe63c5ryv" path="res://asstes/SuperAdorable-MAvyp.ttf" id="5_a63ci"]
 
 [node name="Whackamole" type="Node2D"]
 script = ExtResource("1_rxrny")
@@ -28,6 +29,7 @@ offset_top = 1061.0
 offset_right = 595.0
 offset_bottom = 1130.0
 theme_override_colors/font_color = Color(0.32815367, 0.1762886, 0.034895442, 1)
+theme_override_fonts/font = ExtResource("5_a63ci")
 theme_override_font_sizes/font_size = 50
 
 [node name="Timer_" type="Label" parent="CanvasLayer"]
@@ -36,6 +38,7 @@ offset_top = 927.0
 offset_right = 585.0
 offset_bottom = 996.0
 theme_override_colors/font_color = Color(0.32941177, 0.1764706, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("5_a63ci")
 theme_override_font_sizes/font_size = 50
 
 [node name="Finale" type="Label" parent="CanvasLayer"]
@@ -46,4 +49,5 @@ offset_bottom = 553.0
 theme_override_colors/font_color = Color(0.32941177, 0.1764706, 0.03529412, 1)
 theme_override_colors/font_outline_color = Color(0.98670036, 0.9017465, 0.86416686, 1)
 theme_override_constants/outline_size = 70
+theme_override_fonts/font = ExtResource("5_a63ci")
 theme_override_font_sizes/font_size = 120
