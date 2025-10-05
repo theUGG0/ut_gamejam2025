@@ -24,9 +24,17 @@ var difficulty_multiplier = 1.0
 @onready var game_over_label = $UI/GameOverLabel
 @onready var instructions_label = $UI/InstructionsLabel
 
+@export var music_file: AudioStream  # Drag your music file here in Inspector
+
+@onready var music_player = AudioStreamPlayer.new()
+
 func _ready():
 	setup_game()
 	game_over_label.visible = false
+	add_child(music_player)
+	music_player.stream = music_file
+	music_player.play()
+
 
 func setup_game():
 	# Setup balance bar anchors and position
@@ -123,8 +131,10 @@ func game_over():
 	
 	instructions_label.visible = false
 	if (time_survived > 25):
+		music_player.stop()
 		GameManager.finish_game("Tight Rope", int(time_survived*2), "tight_rope_big")
 	else:
+		music_player.stop()
 		GameManager.finish_game("Tight Rope", int(time_survived*2), "tight_rope_small")
 
 func reset_game():

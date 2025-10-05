@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnw5gp0rb25a6"]
+[gd_scene load_steps=5 format=3 uid="uid://dnw5gp0rb25a6"]
 
 [ext_resource type="Script" uid="uid://b167vr4t7lhav" path="res://scripts/tight-script/tightrope-balance.gd" id="1_1kawf"]
 [ext_resource type="Texture2D" uid="uid://cbhm1lnpmbedl" path="res://asstes/tightrope/tudrukkaru.png" id="2_hlnk3"]
 [ext_resource type="Texture2D" uid="uid://cndwnsatoslxo" path="res://asstes/tightrope/52059ce6-a86f-4a9d-a1ea-d5413eb87cec.png" id="2_lbea8"]
+[ext_resource type="AudioStream" uid="uid://p6301xwkxken" path="res://asstes/SOund/mangud/TASAKAALUMÄNG_MUSIC.mp3" id="2_sj4fq"]
 
 [node name="TightropeGame" type="Node2D"]
 position = Vector2(3, -3)
 script = ExtResource("1_1kawf")
+music_file = ExtResource("2_sj4fq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(952, 566)
