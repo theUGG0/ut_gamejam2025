@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="susle_pela"
-run/main_scene="uid://bypeofscle1rd"
+run/main_scene="uid://dhmslnm8i3bvd"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
