@@ -65,8 +65,8 @@ func get_total_score():
 		total += v
 	return total
 
-func _give_toy(toy_name: String):
-	if toys.has(toy_name):
+func _give_toy(toy_name):
+	if toys.has(toy_name) or not toy_name:
 		return
 	toys.append(toy_name)
 	emit_signal("added_toy", toy_name)
