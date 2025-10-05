@@ -52,6 +52,8 @@ func _process(delta: float) -> void:
 		$Ground.position.x = -scroll
 		for pipe in pipes:
 			pipe.position.x -= SCROLL_SP
+	if $Lind.position.y > screen_size.y:
+		stop_game()
 
 
 func _on_timer_timeout() -> void:
@@ -85,4 +87,5 @@ func stop_game():
 
 func on_ground_hit():
 	$Lind.falling = false
+	print('siin')
 	stop_game()
