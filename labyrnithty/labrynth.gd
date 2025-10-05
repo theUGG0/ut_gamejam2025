@@ -25,6 +25,11 @@ func _process(delta: float) -> void:
 		game_time = 0
 		game_over = true
 		$tegelane/Camera2D/CanvasLayer/EndMessage.text = "Too bad, try again!"
+		
+		await get_tree().create_timer(3).timeout
+		GameManager.finish_game("laburint", 0, null)
+		
+		
 
 	$tegelane/Camera2D/CanvasLayer/Timer.text = "Time: %d" % int(game_time)
 
