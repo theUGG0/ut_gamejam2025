@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpllyijy0v8i3"]
+
+[ext_resource type="Script" uid="uid://c0rryxj70u6rx" path="res://labrynth.gd" id="1_42ucd"]
+[ext_resource type="Texture2D" uid="uid://cdrfnj1qkv60l" path="res://pildid/maze.png" id="2_1hg7a"]
+[ext_resource type="PackedScene" uid="uid://cb8y1pki6mitq" path="res://node_2d.tscn" id="2_cat8l"]
+[ext_resource type="PackedScene" uid="uid://nj2622jpjt1y" path="res://coins.tscn" id="4_vrd2s"]
+[ext_resource type="PackedScene" uid="uid://bc0btorhfrwvh" path="res://walls.tscn" id="5_1hg7a"]
+[ext_resource type="PackedScene" uid="uid://dyrdq8d8bk15r" path="res://the_exit.tscn" id="6_1hg7a"]
+
+[node name="labrynth" type="Node2D"]
+script = ExtResource("1_42ucd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(604, 325.00003)
+scale = Vector2(0.38, 0.274)
+texture = ExtResource("2_1hg7a")
+
+[node name="Walls" parent="." instance=ExtResource("5_1hg7a")]
+
+[node name="Coins" parent="." instance=ExtResource("4_vrd2s")]
+position = Vector2(2, 1)
+
+[node name="tegelane" parent="." instance=ExtResource("2_cat8l")]
+position = Vector2(532, 621)
+
+[node name="theExit" parent="." instance=ExtResource("6_1hg7a")]
+position = Vector2(1, -1)
